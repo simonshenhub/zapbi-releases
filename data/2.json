@@ -1,5 +1,5 @@
 {
-  "publishedAt": "2026-03-31T10:39:45.571Z",
+  "publishedAt": "2026-03-31T20:59:44.969Z",
   "baseBranch": "releases/2026.02",
   "compareBranch": "releases/2026.03",
   "totalPrs": 57,
@@ -13,7 +13,8 @@
       "total_prs": 57,
       "analyzed_at": "2026-03-31T09:50:49.223Z",
       "last_refreshed_at": "2026-03-31T09:50:49.223Z",
-      "status": "complete"
+      "status": "complete",
+      "test_refinement_json": "{\"refined\":[{\"id\":113185,\"name\":\"Create a basic chart\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 chart creation; Analytics area broadly touched by PRs 24504 (PivotTables cleanup), 24483 (inline boxes), 24464 (analysis design copilot), 24424 (utility styles)\"},{\"id\":113178,\"name\":\"Create a basic dashboard with resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 dashboard creation; Analytics portal changed across multiple PRs including CellSets and Copilot changes\"},{\"id\":113136,\"name\":\"Create a basic analysis table\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 analysis table; CellSets touched by PRs 24449 (deferred slicer loading), 24464 (analysis design copilot), 24484 (dimension tree copilot tools) — highest risk area in this release\"},{\"id\":113184,\"name\":\"Create a report pack with resources and section breaks\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 report pack; Analytics portal touched by multiple PRs including PivotTables cleanup (24504)\"},{\"id\":113189,\"name\":\"Filter an analytic using the Filters placeholder\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 filter placeholder; CellSets changed by PRs 24449 and 24464, filter behaviour may be affected\"},{\"id\":113191,\"name\":\"Refresh report data on-demand\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 on-demand refresh; PR 24467 (processing time grace period) directly touches processing pipeline\"},{\"id\":113193,\"name\":\"Slice an analytic using slicer types\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 slicer types; PR 24449 adds deferred slicer loading on server — direct regression risk for all slicer variants\"},{\"id\":113165,\"name\":\"Change connection for an analytic via right-click menu\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 change connection; PR 24479 adds per-user security for tabular server connections — connection change flow must be verified\"},{\"id\":113190,\"name\":\"Import and export analytics resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 import/export; deep link changes (PRs 24371, 24466) and portal resource changes could affect resource export/import URLs\"},{\"id\":113175,\"name\":\"Create a basic calculated member\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 calculated member; CubeModel touched by PRs 24484 and 24464; formula evaluation path via OLAP/CellSets affected by PR 24470\"},{\"id\":113207,\"name\":\"Configure slicer types - inline, single-select, multi-select, date range, and time context\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"Tier-2 but directly tests all five slicer types; PR 24449 deferred slicer loading is a server-side change that could silently break slicer behaviour\"},{\"id\":113139,\"name\":\"Apply filters to an analysis table\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"Tier-2 apply filters; CellSets changed by PRs 24449 and 24464 — filter drag-and-drop path overlaps with deferred loading changes\"},{\"id\":110217,\"name\":\"Opening Resources from the Dimension Tree\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24484 (dimension tree copilot tools) modifies DimensionTree component; opening resources from dimension tree could be affected\"},{\"id\":109939,\"name\":\"Testing Users in Users and Groups, Cube Permissions, and Publication Rule with Default Authentication\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24479 adds per-user security for tabular server connections — cube permissions and user/group access should be verified\"},{\"id\":99819,\"name\":\"SchemaBinding and Row-level security works for Sage Internal Purposes (Odata Layer)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Schema binding and row-level security; PR 24479 changes security layer for tabular connections which overlaps with RLS evaluation\"},{\"id\":109336,\"name\":\"Using Named Set with Member Function as Slicer to Resources\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Named Set as Slicer; PR 24449 deferred slicer loading is server-side and could change how named set slicers resolve members\"},{\"id\":113059,\"name\":\"Process a model\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Process a model; PR 24489 (skip view testing in Core) and PR 24467 (processing grace period) both touch model processing flow\"},{\"id\":110317,\"name\":\"Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Licensing features; PR 24467 changes processing time grace period in Licensing layer — license limit enforcement should be re-verified\"},{\"id\":108904,\"name\":\"Managing azure warehouse database size and sending notification after exceeding the license limit\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24453 (data limits UI changes) directly changes data limits behaviour; warehouse size notifications may be affected\"},{\"id\":96623,\"name\":\"Create a Full Model - MYOB AccountRight Live (Basic Datasource Testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"MYOB AccountRight Live; PR 24514 (MYOB page recovery) is a targeted fix that warrants a basic model creation smoke test\"},{\"id\":103112,\"name\":\"Create a Full Model - MYOB Essentials (Basic Datasource Testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"MYOB Essentials; same MYOB page recovery fix (PR 24514) applies — covers a different MYOB product variant\"},{\"id\":113307,\"name\":\"Modeller - Create a full Model - Acumatica (Basic Data source testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Acumatica is a new data source added in PR 24460 — basic model creation and authentication testing is essential for any new connector\"},{\"id\":109236,\"name\":\"Modeller - Create a full Model - Sage Intacct (Basic Data source testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Sage Intacct; PRs 24482 and 24469 both fix Intacct AP Aging columns — basic model creation verifies the connector still initialises correctly\"},{\"id\":100161,\"name\":\"OData feed in Excel - Number or Date/Time filtering on headers\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData Excel filtering; PR 24446 migrates OData HTTP layer to HttpCommon.HttpClient — a transport-layer change that could affect filter request/response handling\"},{\"id\":100124,\"name\":\"Text Filters for OData data source feed in Excel \",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData text filters; same HTTP layer migration (PR 24446) applies — text filter path is distinct from date/number and should be tested separately\"},{\"id\":100363,\"name\":\"OData feed in Excel - data validation between Feed and Warehouse\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData data validation; PR 24446 HTTP migration could introduce data serialisation differences; warehouse vs feed comparison catches regressions\"},{\"id\":92131,\"name\":\"Modeller - Warehouse Sql pipeline preview loads with correct results\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Warehouse SQL pipeline preview; PR 24511 (SQL generation UI changes) could affect how SQL is generated and previewed in pipelines\"},{\"id\":105783,\"name\":\"Clustered columnstore storage option for staging and warehouse tables\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Clustered columnstore storage; PR 24516 fixes storage engine check for measure naming — columnstore option selection could be affected\"},{\"id\":97149,\"name\":\"Modeller - Offline Datasource supports composite tables\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"NAV offline datasource composite tables; PR 24474 fixes NAV dimension relationship mapping which could affect composite table joins\"},{\"id\":112148,\"name\":\"Performance testing of models with Azure SQL warehouse\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Azure SQL warehouse performance; PR 24412 (optimized cube definition loading behind feature switch) may improve or change processing timing\"}],\"summary\":\"This release is dominated by Copilot and analysis design changes (PRs 24464, 24484, 24499, 24510 and others) that pervasively touch CellSets, CubeModel, DimensionTree, and the Analytics portal — making all Tier-1 analytics tests mandatory. The deferred slicer loading change (PR 24449) and per-user tabular security (PR 24479) are the highest-risk functional changes and drive must-run coverage for slicers, filters, and connection/security tests. DataSource regression is spread across MYOB, Intacct, OData, NAV, and the brand-new Acumatica connector, warranting targeted should-run tests for each affected source. Licensing and processing limit changes (PRs 24467, 24453) require verification of processing triggers and data limit enforcement.\"}"
     },
     "prs": [
       {
@@ -3302,6 +3303,219 @@
           }
         ]
       }
-    ]
+    ],
+    "refined": [
+      {
+        "id": 113185,
+        "name": "Create a basic chart",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 chart creation; Analytics area broadly touched by PRs 24504 (PivotTables cleanup), 24483 (inline boxes), 24464 (analysis design copilot), 24424 (utility styles)"
+      },
+      {
+        "id": 113178,
+        "name": "Create a basic dashboard with resources",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 dashboard creation; Analytics portal changed across multiple PRs including CellSets and Copilot changes"
+      },
+      {
+        "id": 113136,
+        "name": "Create a basic analysis table",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 analysis table; CellSets touched by PRs 24449 (deferred slicer loading), 24464 (analysis design copilot), 24484 (dimension tree copilot tools) — highest risk area in this release"
+      },
+      {
+        "id": 113184,
+        "name": "Create a report pack with resources and section breaks",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 report pack; Analytics portal touched by multiple PRs including PivotTables cleanup (24504)"
+      },
+      {
+        "id": 113189,
+        "name": "Filter an analytic using the Filters placeholder",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 filter placeholder; CellSets changed by PRs 24449 and 24464, filter behaviour may be affected"
+      },
+      {
+        "id": 113191,
+        "name": "Refresh report data on-demand",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 on-demand refresh; PR 24467 (processing time grace period) directly touches processing pipeline"
+      },
+      {
+        "id": 113193,
+        "name": "Slice an analytic using slicer types",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 slicer types; PR 24449 adds deferred slicer loading on server — direct regression risk for all slicer variants"
+      },
+      {
+        "id": 113165,
+        "name": "Change connection for an analytic via right-click menu",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 change connection; PR 24479 adds per-user security for tabular server connections — connection change flow must be verified"
+      },
+      {
+        "id": 113190,
+        "name": "Import and export analytics resources",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 import/export; deep link changes (PRs 24371, 24466) and portal resource changes could affect resource export/import URLs"
+      },
+      {
+        "id": 113175,
+        "name": "Create a basic calculated member",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1 calculated member; CubeModel touched by PRs 24484 and 24464; formula evaluation path via OLAP/CellSets affected by PR 24470"
+      },
+      {
+        "id": 113207,
+        "name": "Configure slicer types - inline, single-select, multi-select, date range, and time context",
+        "tier": "Tier-2",
+        "priority": "must-run",
+        "reasoning": "Tier-2 but directly tests all five slicer types; PR 24449 deferred slicer loading is a server-side change that could silently break slicer behaviour"
+      },
+      {
+        "id": 113139,
+        "name": "Apply filters to an analysis table",
+        "tier": "Tier-2",
+        "priority": "must-run",
+        "reasoning": "Tier-2 apply filters; CellSets changed by PRs 24449 and 24464 — filter drag-and-drop path overlaps with deferred loading changes"
+      },
+      {
+        "id": 110217,
+        "name": "Opening Resources from the Dimension Tree",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR 24484 (dimension tree copilot tools) modifies DimensionTree component; opening resources from dimension tree could be affected"
+      },
+      {
+        "id": 109939,
+        "name": "Testing Users in Users and Groups, Cube Permissions, and Publication Rule with Default Authentication",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR 24479 adds per-user security for tabular server connections — cube permissions and user/group access should be verified"
+      },
+      {
+        "id": 99819,
+        "name": "SchemaBinding and Row-level security works for Sage Internal Purposes (Odata Layer)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Schema binding and row-level security; PR 24479 changes security layer for tabular connections which overlaps with RLS evaluation"
+      },
+      {
+        "id": 109336,
+        "name": "Using Named Set with Member Function as Slicer to Resources",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Named Set as Slicer; PR 24449 deferred slicer loading is server-side and could change how named set slicers resolve members"
+      },
+      {
+        "id": 113059,
+        "name": "Process a model",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Process a model; PR 24489 (skip view testing in Core) and PR 24467 (processing grace period) both touch model processing flow"
+      },
+      {
+        "id": 110317,
+        "name": "Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Licensing features; PR 24467 changes processing time grace period in Licensing layer — license limit enforcement should be re-verified"
+      },
+      {
+        "id": 108904,
+        "name": "Managing azure warehouse database size and sending notification after exceeding the license limit",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR 24453 (data limits UI changes) directly changes data limits behaviour; warehouse size notifications may be affected"
+      },
+      {
+        "id": 96623,
+        "name": "Create a Full Model - MYOB AccountRight Live (Basic Datasource Testing)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "MYOB AccountRight Live; PR 24514 (MYOB page recovery) is a targeted fix that warrants a basic model creation smoke test"
+      },
+      {
+        "id": 103112,
+        "name": "Create a Full Model - MYOB Essentials (Basic Datasource Testing)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "MYOB Essentials; same MYOB page recovery fix (PR 24514) applies — covers a different MYOB product variant"
+      },
+      {
+        "id": 113307,
+        "name": "Modeller - Create a full Model - Acumatica (Basic Data source testing)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Acumatica is a new data source added in PR 24460 — basic model creation and authentication testing is essential for any new connector"
+      },
+      {
+        "id": 109236,
+        "name": "Modeller - Create a full Model - Sage Intacct (Basic Data source testing)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Sage Intacct; PRs 24482 and 24469 both fix Intacct AP Aging columns — basic model creation verifies the connector still initialises correctly"
+      },
+      {
+        "id": 100161,
+        "name": "OData feed in Excel - Number or Date/Time filtering on headers",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "OData Excel filtering; PR 24446 migrates OData HTTP layer to HttpCommon.HttpClient — a transport-layer change that could affect filter request/response handling"
+      },
+      {
+        "id": 100124,
+        "name": "Text Filters for OData data source feed in Excel ",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "OData text filters; same HTTP layer migration (PR 24446) applies — text filter path is distinct from date/number and should be tested separately"
+      },
+      {
+        "id": 100363,
+        "name": "OData feed in Excel - data validation between Feed and Warehouse",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "OData data validation; PR 24446 HTTP migration could introduce data serialisation differences; warehouse vs feed comparison catches regressions"
+      },
+      {
+        "id": 92131,
+        "name": "Modeller - Warehouse Sql pipeline preview loads with correct results",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Warehouse SQL pipeline preview; PR 24511 (SQL generation UI changes) could affect how SQL is generated and previewed in pipelines"
+      },
+      {
+        "id": 105783,
+        "name": "Clustered columnstore storage option for staging and warehouse tables",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Clustered columnstore storage; PR 24516 fixes storage engine check for measure naming — columnstore option selection could be affected"
+      },
+      {
+        "id": 97149,
+        "name": "Modeller - Offline Datasource supports composite tables",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "NAV offline datasource composite tables; PR 24474 fixes NAV dimension relationship mapping which could affect composite table joins"
+      },
+      {
+        "id": 112148,
+        "name": "Performance testing of models with Azure SQL warehouse",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Azure SQL warehouse performance; PR 24412 (optimized cube definition loading behind feature switch) may improve or change processing timing"
+      }
+    ],
+    "refineSummary": "This release is dominated by Copilot and analysis design changes (PRs 24464, 24484, 24499, 24510 and others) that pervasively touch CellSets, CubeModel, DimensionTree, and the Analytics portal — making all Tier-1 analytics tests mandatory. The deferred slicer loading change (PR 24449) and per-user tabular security (PR 24479) are the highest-risk functional changes and drive must-run coverage for slicers, filters, and connection/security tests. DataSource regression is spread across MYOB, Intacct, OData, NAV, and the brand-new Acumatica connector, warranting targeted should-run tests for each affected source. Licensing and processing limit changes (PRs 24467, 24453) require verification of processing triggers and data limit enforcement."
   }
 }
