@@ -1,0 +1,446 @@
+{
+  "publishedAt": "2026-04-07T01:08:25.529Z",
+  "baseBranch": "releases/2026.03",
+  "compareBranch": "master",
+  "totalPrs": 9,
+  "data": {
+    "comparison": {
+      "id": 3,
+      "base_branch": "releases/2026.03",
+      "compare_branch": "master",
+      "base_commit": "ae37e9683de515f88d1b0c27b2732c8c687870f1",
+      "compare_commit": "bf8c7029939aef077f9093a22cc890fe7034f7c8",
+      "total_prs": 9,
+      "analyzed_at": "2026-04-02T03:27:30.434Z",
+      "last_refreshed_at": "2026-04-07T01:08:01.717Z",
+      "status": "complete",
+      "test_refinement_json": null
+    },
+    "prs": [
+      {
+        "id": 692,
+        "comparison_id": 3,
+        "pr_number": 24550,
+        "pr_title": "update some registrations",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-02 06:19:41 +0000",
+        "merge_commit_sha": "bf8c7029939aef077f9093a22cc890fe7034f7c8",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "SharedSource/Core, Portal, Modeller",
+        "risk_reasoning": "Changes span SharedSource/Core (security, licensing, background tasks), Portal (authentication, DI modules, OWIN), and Modeller/UI — a classic high-blast-radius cross-cutting registration/DI refactor touching authentication, licensing, and security primitives used across the entire platform.",
+        "changed_files_json": "[\"BI/Portal/Global.asax.cs\",\"BI/Portal/Helpers/ApplicationInsights/ApplicationInsightsTenantContext.cs\",\"BI/Portal/Helpers/ApplicationInsights/TelemetryConfigurationManager.cs\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/Modules/ResourceViewsModule.cs\",\"BI/Portal/Modules/SecurityModule.cs\",\"BI/Portal/Owin/Authentication/MicrosoftAppUserAuthenticator.cs\",\"BI/Portal/Owin/OwinPaths.cs\",\"BI/Portal/ViewStates/TypeSwitchingViewStateFactory.cs\",\"Modeller/UI/Commands/ColumnAddLinkFormatColumnCommand.cs\",\"Modeller/UI/Commands/ColumnRemoveLinkFormatColumnCommand.cs\",\"Modeller/UI/Controllers/SolutionUpgrade/SolutionUpgrade.cs\",\"Modeller/UI/Resources/DomainReferences/NullDataSource.cs\",\"Modeller/UI/Resources/TypeInfo/SolutionResourceTypeInfo.cs\",\"SharedSource/Core/BackgroundTasks/Queue/WorkPump/HostLevelWorkPumpLocks.cs\",\"SharedSource/Core/BackgroundTasks/Queue/WorkPump/SwitchingWorkPumpRateLimiter.cs\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/Licensing/LicenseRequestInformationBuilder.cs\",\"SharedSource/Core/Licensing/LicenseUpdateRetryableRunnerFactory.cs\",\"SharedSource/Core/Licensing/MachineInformationBuilder.cs\",\"SharedSource/Core/Licensing/WebClientProvider.cs\",\"SharedSource/Core/Resources/ImportExport/DisconnectedResourceSetSerializer.cs\",\"SharedSource/Core/Security/ActiveDirectoryService.cs\",\"SharedSource/Core/Security/ProfileOwnershipHelper.cs\",\"SharedSource/Core/Security/SystemUserContext.cs\",\"SharedSource/Core/SharedSecureKey.cs\",\"SharedSource/Licensing/ILicenseRequestRecorder.cs\",\"SharedSource/UnitTests/Test.Core/ImportExport/ResourceExporterTests.cs\",\"SharedSource/UnitTests/Test.Core/Licensing/MachineInformationBuilderTests.cs\",\"SharedSource/UnitTests/Test.Core/Security/ProfileOwnershipHelperTests.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-04-02T06:40:24.132Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 679,
+        "comparison_id": 3,
+        "pr_number": 24523,
+        "pr_title": "update registrations",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-02 02:01:53 +0000",
+        "merge_commit_sha": "b5296d507264f27379b2612960d1f5443e6368a3",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (SharedSource + Modeller + Portal)",
+        "risk_reasoning": "Touches SharedSource/Core (Persistence, Resources, Events) alongside Modeller/Core pipelines and BI/Portal modules — SharedSource/Core alone is critical blast radius, and the spread across three major product areas compounds the risk.",
+        "changed_files_json": "[\"BI/Portal/Helpers/Scripts/ChartTextProvider.cs\",\"BI/Portal/Modules/ImportExportModule.cs\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/Modules/XmlAuthenticatorWrapper.cs\",\"BI/Portal/Portal.csproj\",\"BI/Resources/Events/CompositeEventEvaluator.cs\",\"BI/Resources/ImportExport/ImportExportController.cs\",\"BI/Resources/Themes/ThemeComponentReference.cs\",\"BI/Resources/Themes/ThemeComponentReferenceProvider.cs\",\"BI/Resources/Themes/ThemeManager.cs\",\"BI/UnitTests/Test.Portal/Printing/ReportPacks/PrintUnitTests.cs\",\"BI/UnitTests/Test.Portal/PublishingTestsBase.cs\",\"BI/UnitTests/Test.Resources/Events/SystemActionProviderTests.cs\",\"Modeller/Core/DomainModel/Pipelines/Updaters/ChangeColumnSelectionUpdater.cs\",\"Modeller/NuGet/PackageManagement/PackageManager.cs\",\"Modeller/Tests/Core.UnitTests/DomainModel/Pipelines/Loaders/Filter/GlobalDateFilterProviderTests.cs\",\"Modeller/Tests/Core.UnitTests/DomainModel/Pipelines/Loaders/FromDateSettingsLoaderDataReaderTests.cs\",\"Modeller/UI/Controllers/Helper/ModelServerAppRegistration.cs\",\"Modeller/UI/Copilot/ModellerCopilotTools.cs\",\"Modeller/UI/Modules/ModellerModule.cs\",\"Modeller/UI/NuGet/PackageInstaller.cs\",\"SharedSource/Core/Persistence/PermalinksRepository.cs\",\"SharedSource/Core/Resources/Events/ConditionEvaluator.cs\",\"SharedSource/Core/Resources/ResourceImportOrPasteHandler.cs\",\"SharedSource/Core/Resources/SerializationModels/ResourceConverter.cs\",\"SharedSource/UnitTests/TestUtils.Core/Persistence/TestPermalinkRepository.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.411Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 680,
+        "comparison_id": 3,
+        "pr_number": 24539,
+        "pr_title": "Open model background tasks from data limits",
+        "pr_author": "Benjamin Prince",
+        "pr_completed_date": "2026-04-02 01:13:09 +0000",
+        "merge_commit_sha": "bbcac2c3545071dbff672eeb6956f21c25e01450",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (SharedSource + Portal + Modeller UI)",
+        "risk_reasoning": "Modifies both SharedSource/Core/BackgroundTasks and SharedSource/Web.Core controllers alongside Portal Client and Modeller UI JavaScript — two SharedSource layers changed with broad surface area across frontend and backend.",
+        "changed_files_json": "[\"BI/Portal/Client/BackgroundTasks/BackgroundTasksController.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksData.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksOptionProvider.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksPanelProvider.tsx\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksTimeRange.ts\",\"BI/Portal/Client/CellSets/OnDemandRefreshDesignPopup.tsx\",\"BI/Portal/Client/Settings/DataLimits/DataLimits.tsx\",\"BI/Portal/Client/typings/BackgroundTaskPaneParameters.d.ts\",\"BI/Portal/Client/typings/ClientText.d.ts\",\"BI/Portal/Controls/JavaScriptBootstrap/BackgroundTaskPaneParameters.cs\",\"BI/Portal/Controls/JavaScriptBootstrap/BackgroundTasksBootstrapPane.cs\",\"BI/Portal/Controls/ResourceLoadManager.cs\",\"BI/Portal/Controls/Settings/SettingsDisplay.ascx.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/PublicationRules/PublicationRuleView.ascx.cs\",\"BI/Portal/Portal.csproj\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksControllerTests.ts\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksDataTests.ts\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksOptionProviderTests.ts\",\"Modeller/Tests/Modeller.UI.Tests/Javascript/Desktop/Controllers/Shared/ProcessButtonTests.js\",\"Modeller/UI/Javascript/Desktop/Controllers/Shared/ProcessButton.js\",\"SharedSource/Core/BackgroundTasks/TaskTimeRange.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/EnumDefinitions.js\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/Web.Core/Client/typings/TaskTimeRange.d.ts\",\"SharedSource/Web.Core/Client/typings/TimeRangeOption.d.ts\",\"SharedSource/Web.Core/Controllers/BackgroundTasksController.cs\"]",
+        "work_items_json": "[{\"id\":113213,\"type\":\"Task\",\"title\":\"Improve data limits ux\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.416Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 683,
+        "comparison_id": 3,
+        "pr_number": 24530,
+        "pr_title": "Wrong parameter supplied",
+        "pr_author": "Scott Chappel",
+        "pr_completed_date": "2026-04-02 00:10:27 +0000",
+        "merge_commit_sha": "4d7c54cb1aca54e0ade0737c00dfb82314559db9",
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "WebServices / Tenancy",
+        "risk_reasoning": "Single-file bug fix correcting a wrong parameter in AzureSqlServerResource — scoped to tenancy provisioning, but a parameter fix implies existing behaviour was incorrect and regression in tenant creation flows is plausible.",
+        "changed_files_json": "[\"Tenancy/TenancyService/Tenancy/AzureSqlServerResource.cs\"]",
+        "work_items_json": "[{\"id\":113309,\"type\":\"Support Issue\",\"title\":\"mxns. Auditing Solution against App database in Cloud\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.423Z",
+        "repo_name": "WebServices"
+      },
+      {
+        "id": 685,
+        "comparison_id": 3,
+        "pr_number": 24536,
+        "pr_title": "MYOB - Page recovery fixes",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-01T05:27:26.3170411Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources / MYOB Connector",
+        "risk_reasoning": "Bug fixes to MYOB page recovery logic in an existing ERP connector — scoped to a single connector but modifies existing data-ingestion behaviour that could affect MYOB sync reliability.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112116,\"type\":\"Change Request\",\"title\":\"Partitioning support for Access data sources\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.429Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 682,
+        "comparison_id": 3,
+        "pr_number": 24546,
+        "pr_title": "increase max query string length",
+        "pr_author": "Ben Gordon",
+        "pr_completed_date": "2026-04-02 01:01:38 +0000",
+        "merge_commit_sha": "52cdfc087d019de619d05a6d05c65195f8867bbe",
+        "risk_score": 4,
+        "risk_category": "config_change",
+        "product_area": "WebServices / API Service",
+        "risk_reasoning": "Single web.config change increasing max query string length — additive and non-breaking, but touches the central API service gateway used by all Data Hub instances.",
+        "changed_files_json": "[\"ApiService/ApiService/web.config\"]",
+        "work_items_json": "[{\"id\":113357,\"type\":\"Bug\",\"title\":\"PowerBI interactive auth ApiService redirect fails\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.421Z",
+        "repo_name": "WebServices"
+      },
+      {
+        "id": 684,
+        "comparison_id": 3,
+        "pr_number": 24534,
+        "pr_title": "Add cutout to aiSearch icon",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-03-31T22:56:01.093814Z",
+        "merge_commit_sha": null,
+        "risk_score": 5,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared / UI Icons",
+        "risk_reasoning": "Icon visual tweak (adding a cutout to an existing icon) in ClientShared — cosmetic only with no logic changes.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.426Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 686,
+        "comparison_id": 3,
+        "pr_number": 24528,
+        "pr_title": "Add aiSearch icon",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-03-31T06:08:19.9714031Z",
+        "merge_commit_sha": null,
+        "risk_score": 5,
+        "risk_category": "new_feature",
+        "product_area": "ClientShared / UI Icons",
+        "risk_reasoning": "Additive new icon asset in ClientShared with no modification of existing components or logic.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.432Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 681,
+        "comparison_id": 3,
+        "pr_number": 24525,
+        "pr_title": "Bumping version to 2026.4",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-03-31 04:00:38 +0000",
+        "merge_commit_sha": "6d138c6b8bc9e587448ea9bd83490906c8fe1354",
+        "risk_score": 5,
+        "risk_category": "documentation",
+        "product_area": "Release Management",
+        "risk_reasoning": "Single GitInfo.txt version bump with no runtime code changes — zero functional impact.",
+        "changed_files_json": "[\"GitInfo.txt\"]",
+        "work_items_json": "[{\"id\":45656,\"type\":\"Task\",\"title\":\"Administration (Oxto)\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-04-02T03:27:30.419Z",
+        "repo_name": "BI"
+      }
+    ],
+    "riskDistribution": {
+      "1": 3,
+      "2": 0,
+      "3": 2,
+      "4": 1,
+      "5": 3
+    },
+    "topAreas": [
+      {
+        "area": "ClientShared / UI Icons",
+        "count": 2
+      },
+      {
+        "area": "SharedSource/Core, Portal, Modeller",
+        "count": 1
+      },
+      {
+        "area": "Cross-cutting (SharedSource + Modeller + Portal)",
+        "count": 1
+      },
+      {
+        "area": "Cross-cutting (SharedSource + Portal + Modeller UI)",
+        "count": 1
+      },
+      {
+        "area": "WebServices / Tenancy",
+        "count": 1
+      },
+      {
+        "area": "DataSources / MYOB Connector",
+        "count": 1
+      },
+      {
+        "area": "WebServices / API Service",
+        "count": 1
+      },
+      {
+        "area": "Release Management",
+        "count": 1
+      }
+    ]
+  },
+  "testRecommendations": {
+    "candidates": [
+      {
+        "area": "All Matches",
+        "matchReason": "15 test cases matched from 575 total",
+        "prCount": 9,
+        "testCases": [
+          {
+            "id": 113136,
+            "name": "Create a basic analysis table",
+            "tier": "Tier-1",
+            "score": 37,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113189,
+            "name": "Filter an analytic using the Filters placeholder",
+            "tier": "Tier-1",
+            "score": 37,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113193,
+            "name": "Slice an analytic using slicer types",
+            "tier": "Tier-1",
+            "score": 37,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113191,
+            "name": "Refresh report data on-demand",
+            "tier": "Tier-1",
+            "score": 31,
+            "matchedTerms": [
+              "modeller",
+              "analytics:analysis-table",
+              "analytics",
+              "modeller:pipeline",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113178,
+            "name": "Create a basic dashboard with resources",
+            "tier": "Tier-1",
+            "score": 22,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113184,
+            "name": "Create a report pack with resources and section breaks",
+            "tier": "Tier-1",
+            "score": 22,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113175,
+            "name": "Create a basic calculated member",
+            "tier": "Tier-1",
+            "score": 19,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113165,
+            "name": "Change connection for an analytic via right-click menu",
+            "tier": "Tier-1",
+            "score": 16,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113185,
+            "name": "Create a basic chart",
+            "tier": "Tier-1",
+            "score": 16,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 113190,
+            "name": "Import and export analytics resources",
+            "tier": "Tier-1",
+            "score": 11,
+            "matchedTerms": [
+              "analytics"
+            ]
+          },
+          {
+            "id": 94894,
+            "name": "Smoke Test - Full Designer Role",
+            "tier": "Tier-2",
+            "score": 50,
+            "matchedTerms": [
+              "modeller",
+              "analytics:analysis-table",
+              "analytics",
+              "admin:cloud-management:tenant",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing",
+              "modeller:cube",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 110317,
+            "name": "Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack",
+            "tier": "Tier-2",
+            "score": 47,
+            "matchedTerms": [
+              "modeller",
+              "analytics:analysis-table",
+              "analytics",
+              "admin:cloud-management:tenant",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing",
+              "modeller:cube",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 99065,
+            "name": "Relative Time folder should show for Date hierarchies in dimension tree",
+            "tier": "Tier-2",
+            "score": 45,
+            "matchedTerms": [
+              "modeller",
+              "analytics:analysis-table",
+              "analytics",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing",
+              "modeller:cube",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 109286,
+            "name": "Reference Relationships",
+            "tier": "Tier-2",
+            "score": 44,
+            "matchedTerms": [
+              "modeller",
+              "analytics:analysis-table",
+              "analytics",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing",
+              "modeller:cube",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          },
+          {
+            "id": 111532,
+            "name": "Excel add-in",
+            "tier": "Tier-2",
+            "score": 43,
+            "matchedTerms": [
+              "analytics:analysis-table",
+              "analytics",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers",
+              "analytics:query-design"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
