@@ -1,22 +1,39 @@
 {
-  "publishedAt": "2026-04-07T01:08:25.529Z",
+  "publishedAt": "2026-04-07T09:42:48.640Z",
   "baseBranch": "releases/2026.03",
   "compareBranch": "master",
-  "totalPrs": 9,
+  "totalPrs": 12,
   "data": {
     "comparison": {
       "id": 3,
       "base_branch": "releases/2026.03",
       "compare_branch": "master",
       "base_commit": "ae37e9683de515f88d1b0c27b2732c8c687870f1",
-      "compare_commit": "bf8c7029939aef077f9093a22cc890fe7034f7c8",
-      "total_prs": 9,
+      "compare_commit": "8b2dbe6bef95418ba9ef9c4f34425796c4098d2b",
+      "total_prs": 12,
       "analyzed_at": "2026-04-02T03:27:30.434Z",
-      "last_refreshed_at": "2026-04-07T01:08:01.717Z",
+      "last_refreshed_at": "2026-04-07T09:42:14.306Z",
       "status": "complete",
       "test_refinement_json": null
     },
     "prs": [
+      {
+        "id": 693,
+        "comparison_id": 3,
+        "pr_number": 24551,
+        "pr_title": "Link attributes improvements",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-07 06:02:55 +0000",
+        "merge_commit_sha": "8b2dbe6bef95418ba9ef9c4f34425796c4098d2b",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (SharedSource + Modeller + Analytics)",
+        "risk_reasoning": "Touches SharedSource/Core and SharedSource/Query (highest blast radius) alongside changes spanning Modeller/CubeModel, Modeller/Ssas.Tabular, Modeller/AnalysisServices, BI/Resources/CellSets, and BI/Portal/Controls — modifications across this many layers simultaneously maximises regression surface across cube builds, SSAS deployment, cell set evaluation, and portal rendering.",
+        "changed_files_json": "[\"BI/Portal/Controls/UserControls/ResourceControls/PivotTables/PivotTableRenderer.cs\",\"BI/Resources/CellSets/CellSetEvaluator.cs\",\"BI/Resources/CellSets/LinkAttributeMemberProperties.cs\",\"BI/Resources/CubeModel/CubeDefinition.cs\",\"BI/Resources/Olap/Connection/Amo/AmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/CachingAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/IAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Tom/TomDataManager.cs\",\"BI/Resources/Resources.csproj\",\"BI/UnitTests/TestUtils.BI.Common/Cube/TestCubeDefinition.cs\",\"Modeller/AnalysisServices/CubeGeneration/Dimensions/DimensionGenerator.cs\",\"Modeller/CubeModel/CubeLinkAttributeAnnotation.cs\",\"Modeller/CubeModel/CubeModel.csproj\",\"Modeller/CubeModel/Dimension.cs\",\"Modeller/CubeModelBuilders/DimensionGenerator.cs\",\"Modeller/Ssas.Tabular/DomainModels/ModellerTable.cs\",\"Modeller/Ssas.Tabular/ModelGeneration/TableGenerator.cs\",\"Modeller/Ssas.Tabular/TabularModelUpdaters/TabularTableUpdater.cs\",\"Modeller/Tests/AnalysisServices.UnitTests/CubeGeneration/Dimensions/DimensionGeneratorTest.cs\",\"Modeller/Tests/Modeller.UI.Tests/Client/PipelineResource/TaskPane/ColumnAnalyticsTests.ts\",\"Modeller/Tests/Ssas.Tabular.UnitTests/TabularTableUpdaterTests.cs\",\"Modeller/Tests/TestCommon/CubeModelHelpers.cs\",\"Modeller/UI/Client/PipelineResource/TaskPane/ColumnAnalytics.ts\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/CoreSwitch.cs\",\"SharedSource/Core/Resources/DataSources/AnnotationNames.cs\",\"SharedSource/Core/Resources/DataSources/LinkAttributeAnnotation.cs\",\"SharedSource/Query/CubeModel/ICubeDefinition.cs\"]",
+        "work_items_json": "[{\"id\":113011,\"type\":\"Change Request\",\"title\":\"Deep links\",\"state\":\"Pending review\"}]",
+        "analyzed_at": "2026-04-07T09:42:14.299Z",
+        "repo_name": "BI"
+      },
       {
         "id": 692,
         "comparison_id": 3,
@@ -69,6 +86,23 @@
         "repo_name": "BI"
       },
       {
+        "id": 695,
+        "comparison_id": 3,
+        "pr_number": 24541,
+        "pr_title": "Adding Zap AI MessageInput features to TextArea",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-07T03:22:50.2117238Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared (AI / Copilot UI)",
+        "risk_reasoning": "Modifying an existing shared TextArea component to incorporate Zap AI MessageInput features could affect all Portal surfaces that use the component, and AI feature integration in shared components carries moderate regression risk for Copilot and query-input flows.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112830,\"type\":\"Change Request\",\"title\":\"Sql copilot poc\",\"state\":\"Testing\"}]",
+        "analyzed_at": "2026-04-07T09:42:14.305Z",
+        "repo_name": "ClientShared"
+      },
+      {
         "id": 683,
         "comparison_id": 3,
         "pr_number": 24530,
@@ -101,6 +135,23 @@
         "work_items_json": "[{\"id\":112116,\"type\":\"Change Request\",\"title\":\"Partitioning support for Access data sources\",\"state\":\"Closed\"}]",
         "analyzed_at": "2026-04-02T03:27:30.429Z",
         "repo_name": "DataSources"
+      },
+      {
+        "id": 694,
+        "comparison_id": 3,
+        "pr_number": 24552,
+        "pr_title": "Add multiTable icon for allAvailableTables context item",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-07T05:16:41.5697716Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "ClientShared (UI Components)",
+        "risk_reasoning": "Adding a new icon for a context menu item in ClientShared is an additive-only UI change with no file list suggesting deep logic modifications; isolated visual addition with minimal risk of breaking existing behaviour.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-07T09:42:14.303Z",
+        "repo_name": "ClientShared"
       },
       {
         "id": 682,
@@ -172,16 +223,20 @@
       }
     ],
     "riskDistribution": {
-      "1": 3,
+      "1": 4,
       "2": 0,
-      "3": 2,
-      "4": 1,
+      "3": 3,
+      "4": 2,
       "5": 3
     },
     "topAreas": [
       {
         "area": "ClientShared / UI Icons",
         "count": 2
+      },
+      {
+        "area": "Cross-cutting (SharedSource + Modeller + Analytics)",
+        "count": 1
       },
       {
         "area": "SharedSource/Core, Portal, Modeller",
@@ -196,11 +251,19 @@
         "count": 1
       },
       {
+        "area": "ClientShared (AI / Copilot UI)",
+        "count": 1
+      },
+      {
         "area": "WebServices / Tenancy",
         "count": 1
       },
       {
         "area": "DataSources / MYOB Connector",
+        "count": 1
+      },
+      {
+        "area": "ClientShared (UI Components)",
         "count": 1
       },
       {
@@ -218,7 +281,7 @@
       {
         "area": "All Matches",
         "matchReason": "15 test cases matched from 575 total",
-        "prCount": 9,
+        "prCount": 12,
         "testCases": [
           {
             "id": 113136,
@@ -226,11 +289,11 @@
             "tier": "Tier-1",
             "score": 37,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -239,11 +302,11 @@
             "tier": "Tier-1",
             "score": 37,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -252,11 +315,11 @@
             "tier": "Tier-1",
             "score": 37,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -265,13 +328,13 @@
             "tier": "Tier-1",
             "score": 31,
             "matchedTerms": [
+              "analytics",
               "modeller",
               "analytics:analysis-table",
-              "analytics",
+              "analytics:query-design",
               "modeller:pipeline",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -280,11 +343,11 @@
             "tier": "Tier-1",
             "score": 22,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -293,11 +356,11 @@
             "tier": "Tier-1",
             "score": 22,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -306,11 +369,11 @@
             "tier": "Tier-1",
             "score": 19,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -319,11 +382,11 @@
             "tier": "Tier-1",
             "score": 16,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -332,11 +395,11 @@
             "tier": "Tier-1",
             "score": 16,
             "matchedTerms": [
-              "analytics:analysis-table",
               "analytics",
+              "analytics:analysis-table",
+              "analytics:query-design",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
@@ -349,94 +412,101 @@
             ]
           },
           {
-            "id": 94894,
-            "name": "Smoke Test - Full Designer Role",
+            "id": 99065,
+            "name": "Relative Time folder should show for Date hierarchies in dimension tree",
             "tier": "Tier-2",
-            "score": 50,
+            "score": 62,
             "matchedTerms": [
+              "analytics",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
               "modeller",
               "analytics:analysis-table",
-              "analytics",
-              "admin:cloud-management:tenant",
+              "analytics:query-design",
               "modeller:pipeline",
               "modeller:datasource",
               "modeller:simple-model-view",
               "modeller:processing",
-              "modeller:cube",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 94894,
+            "name": "Smoke Test - Full Designer Role",
+            "tier": "Tier-2",
+            "score": 58,
+            "matchedTerms": [
+              "analytics",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller",
+              "analytics:analysis-table",
+              "admin:cloud-management:tenant",
+              "analytics:query-design",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 108635,
+            "name": "Azure Analysis Service for Tabular modeling",
+            "tier": "Tier-2",
+            "score": 56,
+            "matchedTerms": [
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller",
+              "admin:cloud-management:tenant",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
             ]
           },
           {
             "id": 110317,
             "name": "Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack",
             "tier": "Tier-2",
-            "score": 47,
+            "score": 55,
             "matchedTerms": [
+              "analytics",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
               "modeller",
               "analytics:analysis-table",
-              "analytics",
               "admin:cloud-management:tenant",
+              "analytics:query-design",
               "modeller:pipeline",
               "modeller:datasource",
               "modeller:simple-model-view",
               "modeller:processing",
-              "modeller:cube",
               "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "analytics:analysis-table:slicers"
             ]
           },
           {
-            "id": 99065,
-            "name": "Relative Time folder should show for Date hierarchies in dimension tree",
+            "id": 107742,
+            "name": "Converting a Model from a Multi-Dimensional cube server into Tabular",
             "tier": "Tier-2",
-            "score": 45,
+            "score": 54,
             "matchedTerms": [
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
               "modeller",
-              "analytics:analysis-table",
-              "analytics",
               "modeller:pipeline",
               "modeller:datasource",
               "modeller:simple-model-view",
-              "modeller:processing",
-              "modeller:cube",
-              "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
-            ]
-          },
-          {
-            "id": 109286,
-            "name": "Reference Relationships",
-            "tier": "Tier-2",
-            "score": 44,
-            "matchedTerms": [
-              "modeller",
-              "analytics:analysis-table",
-              "analytics",
-              "modeller:pipeline",
-              "modeller:datasource",
-              "modeller:simple-model-view",
-              "modeller:processing",
-              "modeller:cube",
-              "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
-            ]
-          },
-          {
-            "id": 111532,
-            "name": "Excel add-in",
-            "tier": "Tier-2",
-            "score": 43,
-            "matchedTerms": [
-              "analytics:analysis-table",
-              "analytics",
-              "analytics:analysis-table:filters",
-              "analytics:analysis-table:slicers",
-              "analytics:query-design"
+              "modeller:processing"
             ]
           }
         ]
