@@ -1,6 +1,13 @@
 {
   "comparisons": [
     {
+      "id": 3,
+      "baseBranch": "releases/2026.03",
+      "compareBranch": "master",
+      "totalPrs": 9,
+      "publishedAt": "2026-04-07T01:08:25.529Z"
+    },
+    {
       "id": 2,
       "baseBranch": "releases/2026.02",
       "compareBranch": "releases/2026.03",
