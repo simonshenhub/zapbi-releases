@@ -1,22 +1,56 @@
 {
-  "publishedAt": "2026-04-13T05:11:12.044Z",
+  "publishedAt": "2026-04-15T23:30:48.597Z",
   "baseBranch": "releases/2026.02",
   "compareBranch": "releases/2026.03",
-  "totalPrs": 92,
+  "totalPrs": 98,
   "data": {
     "comparison": {
       "id": 2,
       "base_branch": "releases/2026.02",
       "compare_branch": "releases/2026.03",
       "base_commit": "1669097cff28cde66e2d473eb5345b367a53c730",
-      "compare_commit": "5ead3325cf3e48ae5addde8db43d441ef88176f6",
-      "total_prs": 92,
+      "compare_commit": "6e70fc7cb81e02a88fe139882cba1a64c46f4dae",
+      "total_prs": 98,
       "analyzed_at": "2026-03-31T22:19:21.981Z",
-      "last_refreshed_at": "2026-04-13T05:09:53.506Z",
+      "last_refreshed_at": "2026-04-15T21:55:37.566Z",
       "status": "complete",
       "test_refinement_json": "{\"refined\":[{\"id\":113185,\"name\":\"Create a basic chart\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 chart creation; Analytics area broadly touched by PRs 24504 (PivotTables cleanup), 24483 (inline boxes), 24464 (analysis design copilot), 24424 (utility styles)\"},{\"id\":113178,\"name\":\"Create a basic dashboard with resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 dashboard creation; Analytics portal changed across multiple PRs including CellSets and Copilot changes\"},{\"id\":113136,\"name\":\"Create a basic analysis table\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 analysis table; CellSets touched by PRs 24449 (deferred slicer loading), 24464 (analysis design copilot), 24484 (dimension tree copilot tools) — highest risk area in this release\"},{\"id\":113184,\"name\":\"Create a report pack with resources and section breaks\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 report pack; Analytics portal touched by multiple PRs including PivotTables cleanup (24504)\"},{\"id\":113189,\"name\":\"Filter an analytic using the Filters placeholder\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 filter placeholder; CellSets changed by PRs 24449 and 24464, filter behaviour may be affected\"},{\"id\":113191,\"name\":\"Refresh report data on-demand\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 on-demand refresh; PR 24467 (processing time grace period) directly touches processing pipeline\"},{\"id\":113193,\"name\":\"Slice an analytic using slicer types\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 slicer types; PR 24449 adds deferred slicer loading on server — direct regression risk for all slicer variants\"},{\"id\":113165,\"name\":\"Change connection for an analytic via right-click menu\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 change connection; PR 24479 adds per-user security for tabular server connections — connection change flow must be verified\"},{\"id\":113190,\"name\":\"Import and export analytics resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 import/export; deep link changes (PRs 24371, 24466) and portal resource changes could affect resource export/import URLs\"},{\"id\":113175,\"name\":\"Create a basic calculated member\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1 calculated member; CubeModel touched by PRs 24484 and 24464; formula evaluation path via OLAP/CellSets affected by PR 24470\"},{\"id\":113207,\"name\":\"Configure slicer types - inline, single-select, multi-select, date range, and time context\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"Tier-2 but directly tests all five slicer types; PR 24449 deferred slicer loading is a server-side change that could silently break slicer behaviour\"},{\"id\":113139,\"name\":\"Apply filters to an analysis table\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"Tier-2 apply filters; CellSets changed by PRs 24449 and 24464 — filter drag-and-drop path overlaps with deferred loading changes\"},{\"id\":110217,\"name\":\"Opening Resources from the Dimension Tree\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24484 (dimension tree copilot tools) modifies DimensionTree component; opening resources from dimension tree could be affected\"},{\"id\":109939,\"name\":\"Testing Users in Users and Groups, Cube Permissions, and Publication Rule with Default Authentication\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24479 adds per-user security for tabular server connections — cube permissions and user/group access should be verified\"},{\"id\":99819,\"name\":\"SchemaBinding and Row-level security works for Sage Internal Purposes (Odata Layer)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Schema binding and row-level security; PR 24479 changes security layer for tabular connections which overlaps with RLS evaluation\"},{\"id\":109336,\"name\":\"Using Named Set with Member Function as Slicer to Resources\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Named Set as Slicer; PR 24449 deferred slicer loading is server-side and could change how named set slicers resolve members\"},{\"id\":113059,\"name\":\"Process a model\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Process a model; PR 24489 (skip view testing in Core) and PR 24467 (processing grace period) both touch model processing flow\"},{\"id\":110317,\"name\":\"Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Licensing features; PR 24467 changes processing time grace period in Licensing layer — license limit enforcement should be re-verified\"},{\"id\":108904,\"name\":\"Managing azure warehouse database size and sending notification after exceeding the license limit\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR 24453 (data limits UI changes) directly changes data limits behaviour; warehouse size notifications may be affected\"},{\"id\":96623,\"name\":\"Create a Full Model - MYOB AccountRight Live (Basic Datasource Testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"MYOB AccountRight Live; PR 24514 (MYOB page recovery) is a targeted fix that warrants a basic model creation smoke test\"},{\"id\":103112,\"name\":\"Create a Full Model - MYOB Essentials (Basic Datasource Testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"MYOB Essentials; same MYOB page recovery fix (PR 24514) applies — covers a different MYOB product variant\"},{\"id\":113307,\"name\":\"Modeller - Create a full Model - Acumatica (Basic Data source testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Acumatica is a new data source added in PR 24460 — basic model creation and authentication testing is essential for any new connector\"},{\"id\":109236,\"name\":\"Modeller - Create a full Model - Sage Intacct (Basic Data source testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Sage Intacct; PRs 24482 and 24469 both fix Intacct AP Aging columns — basic model creation verifies the connector still initialises correctly\"},{\"id\":100161,\"name\":\"OData feed in Excel - Number or Date/Time filtering on headers\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData Excel filtering; PR 24446 migrates OData HTTP layer to HttpCommon.HttpClient — a transport-layer change that could affect filter request/response handling\"},{\"id\":100124,\"name\":\"Text Filters for OData data source feed in Excel \",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData text filters; same HTTP layer migration (PR 24446) applies — text filter path is distinct from date/number and should be tested separately\"},{\"id\":100363,\"name\":\"OData feed in Excel - data validation between Feed and Warehouse\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"OData data validation; PR 24446 HTTP migration could introduce data serialisation differences; warehouse vs feed comparison catches regressions\"},{\"id\":92131,\"name\":\"Modeller - Warehouse Sql pipeline preview loads with correct results\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Warehouse SQL pipeline preview; PR 24511 (SQL generation UI changes) could affect how SQL is generated and previewed in pipelines\"},{\"id\":105783,\"name\":\"Clustered columnstore storage option for staging and warehouse tables\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Clustered columnstore storage; PR 24516 fixes storage engine check for measure naming — columnstore option selection could be affected\"},{\"id\":97149,\"name\":\"Modeller - Offline Datasource supports composite tables\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"NAV offline datasource composite tables; PR 24474 fixes NAV dimension relationship mapping which could affect composite table joins\"},{\"id\":112148,\"name\":\"Performance testing of models with Azure SQL warehouse\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Azure SQL warehouse performance; PR 24412 (optimized cube definition loading behind feature switch) may improve or change processing timing\"}],\"summary\":\"This release is dominated by Copilot and analysis design changes (PRs 24464, 24484, 24499, 24510 and others) that pervasively touch CellSets, CubeModel, DimensionTree, and the Analytics portal — making all Tier-1 analytics tests mandatory. The deferred slicer loading change (PR 24449) and per-user tabular security (PR 24479) are the highest-risk functional changes and drive must-run coverage for slicers, filters, and connection/security tests. DataSource regression is spread across MYOB, Intacct, OData, NAV, and the brand-new Acumatica connector, warranting targeted should-run tests for each affected source. Licensing and processing limit changes (PRs 24467, 24453) require verification of processing triggers and data limit enforcement.\"}"
     },
     "prs": [
+      {
+        "id": 735,
+        "comparison_id": 2,
+        "pr_number": 24585,
+        "pr_title": "YOLO mode feature switch",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-14 00:09:20 +0000",
+        "merge_commit_sha": "eaba0d8d2d64ca4fb14c8253c6fbcabc9ef3392e",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "SharedSource / Copilot",
+        "risk_reasoning": "Changes to SharedSource/Web.Core (ICopilotToolProvider + WebCoreSwitch) sit in the highest blast-radius layer affecting all web endpoints, even though the change is a feature switch addition.",
+        "changed_files_json": "[\"SharedSource/Web.Core/Copilot/ICopilotToolProvider.cs\",\"SharedSource/Web.Core/WebCoreSwitch.cs\"]",
+        "work_items_json": "[{\"id\":113120,\"type\":\"Change Request\",\"title\":\"Copilot - Analysis design\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.320Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 736,
+        "comparison_id": 2,
+        "pr_number": 24583,
+        "pr_title": "More analysis copilot fixes",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-13 07:33:45 +0000",
+        "merge_commit_sha": "3e0e4877de0fae2bc27370208774e7e5e1c76864",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "SharedSource / Portal Copilot",
+        "risk_reasoning": "Includes a change to SharedSource/Web.Core/Copilot/ResourceLinkBuilder.cs which is in the critical shared layer; combined with Portal Copilot and yarn.lock changes this spans multiple areas.",
+        "changed_files_json": "[\"BI/Portal/Client/Copilot/MessageInput.tsx\",\"BI/Portal/Copilot/AnalysisCopilotTools.cs\",\"SharedSource/Web.Core/Copilot/ResourceLinkBuilder.cs\",\"yarn.lock\"]",
+        "work_items_json": "[{\"id\":112983,\"type\":\"Change Request\",\"title\":\"[Blocked by 113297] Copilot - Data exploration for analysis reports\",\"state\":\"Testing\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.321Z",
+        "repo_name": "BI"
+      },
       {
         "id": 719,
         "comparison_id": 2,
@@ -341,6 +375,40 @@
         "repo_name": "BI"
       },
       {
+        "id": 734,
+        "comparison_id": 2,
+        "pr_number": 24579,
+        "pr_title": "Move copilot description options into design panel",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-14 00:14:43 +0000",
+        "merge_commit_sha": "ede657bada089435eb30f2319357cbe981161bc8",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Analytics / Portal",
+        "risk_reasoning": "45 files changed across Copilot, DesignBar, CellSet controls, Portal Controllers, and typings — broad surface area touching existing CellSet and controller behaviour with meaningful regression exposure.",
+        "changed_files_json": "[\"BI/Portal/Client/Copilot/AIDescriptionEditor.tsx\",\"BI/Portal/Client/Copilot/CopilotChat.tsx\",\"BI/Portal/Client/Copilot/CopilotChatController.ts\",\"BI/Portal/Client/Copilot/CopilotChatModel.ts\",\"BI/Portal/Client/DesignBar/DesignBar.tsx\",\"BI/Portal/Client/PortalInjectionSetup.ts\",\"BI/Portal/Client/PortalModel.ts\",\"BI/Portal/Client/ResourceProperties/ResourcePropertiesController.ts\",\"BI/Portal/Client/typings/BackgroundTaskPaneParameters.d.ts\",\"BI/Portal/Client/typings/CellSetResourceController.d.ts\",\"BI/Portal/Client/typings/ClientResourceContextMenuInfo.d.ts\",\"BI/Portal/Client/typings/ClientText.d.ts\",\"BI/Portal/Client/typings/ClientTooltips.d.ts\",\"BI/Portal/Client/typings/CopilotDescriptionUpdateRequest.d.ts\",\"BI/Portal/Client/typings/ResourceCopilotOptions.d.ts\",\"BI/Portal/Controllers/CellSetResourceController.cs\",\"BI/Portal/Controllers/ResourceContextMenuController.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/AnalysisOptionProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/AnalysisViewOptionProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/CellSetController.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/CellSetOptionProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/CellSetView.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/CellSetViewOptionProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/CellSets/DrillThroughOptionProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/DrillThroughCellSets/DrillThroughViewOptionProvider.cs\",\"BI/Portal/CopilotText.Designer.cs\",\"BI/Portal/CopilotText.resx\",\"BI/Portal/CopilotTooltips.Designer.cs\",\"BI/Portal/CopilotTooltips.resx\",\"BI/Portal/Scripts/Desktop/Resources/CellSets/CellSetView.js\",\"BI/Portal/Templates/ResourceProperties.html\",\"BI/UnitTests/Test.Portal/CellSets/OptionProviders/AnalysisOptionProviderTests.cs\",\"BI/UnitTests/Test.Portal/CellSets/OptionProviders/CellSetOptionProviderTests.cs\",\"BI/UnitTests/Test.Portal/Controls/OptionProviders/AnalysisRibbonsTest.cs\",\"BI/UnitTests/Test.Portal/Controls/OptionProviders/DrillThroughRibbonsTest.cs\",\"Docs/readme.md\",\"Docs/sections/using-data-hub/reference/images/zap-ai-add-context.avif\",\"Docs/sections/using-data-hub/reference/images/zap-ai-report-options.avif\",\"Docs/sections/using-data-hub/reference/zap-ai.md\",\"Docs/src/components/context-ids.yml\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestTooltips.js\",\"SharedSource/Web.Core/Client/typings/TaskTimeRange.d.ts\",\"SharedSource/Web.Core/Client/typings/TimeRangeOption.d.ts\",\"SharedSource/Web.Core/IconName.cs\"]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.318Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 737,
+        "comparison_id": 2,
+        "pr_number": 24582,
+        "pr_title": "TextArea allows onSubmit to be overridden",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-13T06:23:35.1535676Z",
+        "merge_commit_sha": null,
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared (Shared UI Components)",
+        "risk_reasoning": "Modifying TextArea submit behaviour in a shared client component used across Portal — behavioural change to a widely-consumed primitive carries meaningful regression risk across all forms and inputs.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112839,\"type\":\"Change Request\",\"title\":\"Copilot chat UI 2\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.323Z",
+        "repo_name": "ClientShared"
+      },
+      {
         "id": 697,
         "comparison_id": 2,
         "pr_number": 24555,
@@ -526,6 +594,23 @@
         "work_items_json": "[{\"id\":113011,\"type\":\"Change Request\",\"title\":\"Deep links\",\"state\":\"Pending review\"}]",
         "analyzed_at": "2026-03-31T22:19:21.814Z",
         "repo_name": "BI"
+      },
+      {
+        "id": 738,
+        "comparison_id": 2,
+        "pr_number": 24522,
+        "pr_title": "clean up custom table lists",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-14T01:44:43.1658848Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Cleanup of custom table lists in the DataSources connector repo — scoped to a single data source area with no indication of cross-cutting changes, but modifies existing connector behaviour.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.325Z",
+        "repo_name": "DataSources"
       },
       {
         "id": 718,
@@ -1035,6 +1120,23 @@
         "changed_files_json": "[\"Modeller/UI/DataSource/WampConnection.cs\"]",
         "work_items_json": "[{\"id\":113088,\"type\":\"Bug\",\"title\":\"Sage X3 Cloud, Sage 100, and Syspro data sources were stuck on loading on .2 build after testing connection\",\"state\":\"Closed\"}]",
         "analyzed_at": "2026-03-31T22:19:21.863Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 733,
+        "comparison_id": 2,
+        "pr_number": 24589,
+        "pr_title": "Disable HistoryStepDataAutoBackups feature switch until batching is done properly",
+        "pr_author": "Jun Zhu",
+        "pr_completed_date": "2026-04-14 02:05:15 +0000",
+        "merge_commit_sha": "6b64e8751034eeba4592e3a2f2aa13c068ad44b3",
+        "risk_score": 4,
+        "risk_category": "config_change",
+        "product_area": "Modeller UI",
+        "risk_reasoning": "Single feature switch toggle in Modeller/UI/ModellerSwitch.cs disabling a backup feature — isolated config change with no logic modification, low blast radius.",
+        "changed_files_json": "[\"Modeller/UI/ModellerSwitch.cs\"]",
+        "work_items_json": "[{\"id\":112510,\"type\":\"Change Request\",\"title\":\"Scheduling automatic backups for all history tables\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-04-14T04:57:23.316Z",
         "repo_name": "BI"
       },
       {
@@ -1583,16 +1685,16 @@
       }
     ],
     "riskDistribution": {
-      "1": 19,
-      "2": 11,
-      "3": 30,
-      "4": 21,
+      "1": 21,
+      "2": 13,
+      "3": 31,
+      "4": 22,
       "5": 11
     },
     "topAreas": [
       {
         "area": "DataSources",
-        "count": 7
+        "count": 8
       },
       {
         "area": "WebServices / Tenancy",
@@ -1627,6 +1729,10 @@
         "count": 2
       },
       {
+        "area": "Modeller UI",
+        "count": 2
+      },
+      {
         "area": "WebServices / TeamsBot",
         "count": 2
       },
@@ -1645,6 +1751,14 @@
       {
         "area": "DevOps / Build",
         "count": 2
+      },
+      {
+        "area": "SharedSource / Copilot",
+        "count": 1
+      },
+      {
+        "area": "SharedSource / Portal Copilot",
+        "count": 1
       },
       {
         "area": "Modeller (Core / SSAS Tabular / Serialization) + Analytics (Portal Client)",
@@ -1696,6 +1810,14 @@
       },
       {
         "area": "Shared / Web.Core",
+        "count": 1
+      },
+      {
+        "area": "Analytics / Portal",
+        "count": 1
+      },
+      {
+        "area": "ClientShared (Shared UI Components)",
         "count": 1
       },
       {
@@ -1756,10 +1878,6 @@
       },
       {
         "area": "WebServices / Cloud Management",
-        "count": 1
-      },
-      {
-        "area": "Modeller UI",
         "count": 1
       },
       {
@@ -1873,7 +1991,7 @@
       {
         "area": "All Matches",
         "matchReason": "60 test cases matched from 578 total",
-        "prCount": 92,
+        "prCount": 98,
         "testCases": [
           {
             "id": 113136,
@@ -1881,8 +1999,8 @@
             "tier": "Tier-1",
             "score": 50,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -1899,8 +2017,8 @@
             "tier": "Tier-1",
             "score": 49,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -1917,8 +2035,8 @@
             "tier": "Tier-1",
             "score": 49,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -1935,9 +2053,9 @@
             "tier": "Tier-1",
             "score": 48,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "analytics",
-              "analytics:copilot",
               "shared:caching",
               "analytics:analysis-table",
               "analytics:query-design",
@@ -1956,8 +2074,8 @@
             "tier": "Tier-1",
             "score": 34,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -1974,8 +2092,8 @@
             "tier": "Tier-1",
             "score": 31,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -1992,8 +2110,8 @@
             "tier": "Tier-1",
             "score": 28,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -2010,8 +2128,8 @@
             "tier": "Tier-1",
             "score": 27,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -2028,8 +2146,8 @@
             "tier": "Tier-1",
             "score": 25,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -2084,12 +2202,12 @@
             "tier": "Tier-2",
             "score": 97,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2121,12 +2239,12 @@
             "tier": "Tier-2",
             "score": 96,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2214,12 +2332,12 @@
             "tier": "Tier-2",
             "score": 88,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2247,12 +2365,12 @@
             "tier": "Tier-2",
             "score": 87,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2382,12 +2500,12 @@
             "tier": "Tier-2",
             "score": 72,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2440,12 +2558,12 @@
             "tier": "Tier-2",
             "score": 69,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2500,12 +2618,12 @@
             "tier": "Tier-2",
             "score": 69,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2668,12 +2786,12 @@
             "tier": "Tier-2",
             "score": 64,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -2872,12 +2990,12 @@
             "tier": "Tier-2",
             "score": 59,
             "matchedTerms": [
+              "analytics:copilot",
               "modeller",
               "modeller:model-roles",
               "modeller:serialization",
               "modeller:cube:tabular",
               "analytics",
-              "analytics:copilot",
               "analytics:analysis-table",
               "analytics:query-design",
               "modeller:cube:ssas",
@@ -3045,8 +3163,8 @@
             "tier": "Tier-2",
             "score": 58,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
@@ -3108,8 +3226,8 @@
             "tier": "Tier-2",
             "score": 57,
             "matchedTerms": [
-              "analytics",
               "analytics:copilot",
+              "analytics",
               "analytics:analysis-table",
               "analytics:query-design",
               "analytics:dashboard",
