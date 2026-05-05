@@ -1,0 +1,2407 @@
+{
+  "publishedAt": "2026-05-05T04:15:12.041Z",
+  "baseBranch": "releases/2026.03",
+  "compareBranch": "releases/2026.04",
+  "totalPrs": 44,
+  "data": {
+    "comparison": {
+      "id": 4,
+      "base_branch": "releases/2026.03",
+      "compare_branch": "releases/2026.04",
+      "base_commit": "d9a4a88f9e41a0f876b3d67dc9ec296cbe2b63e9",
+      "compare_commit": "c9ceec887a89b1210da09f7b88093e8f3c38faa8",
+      "total_prs": 44,
+      "analyzed_at": "2026-05-05T00:26:33.523Z",
+      "last_refreshed_at": "2026-05-05T00:26:33.523Z",
+      "status": "complete",
+      "test_refinement_json": "{\"refined\":[{\"id\":113189,\"name\":\"Filter an analytic using the Filters placeholder\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Analytics PRs (#24553 theme fix, #24628 merge, #24701 account functions) directly affect analytic rendering and filter behaviour.\"},{\"id\":113193,\"name\":\"Slice an analytic using slicer types\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. PR #24641 explicitly changes the slicer API call (passes requestId); slicer functionality must be verified end-to-end.\"},{\"id\":113136,\"name\":\"Create a basic analysis table\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Broad cross-cutting registration changes (#24523, #24550, #24563, #24624) affect resource creation paths including analysis tables.\"},{\"id\":113191,\"name\":\"Refresh report data on-demand\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. PR #24539 opens model background tasks from data limits, directly touching on-demand refresh and pipeline execution flow.\"},{\"id\":113178,\"name\":\"Create a basic dashboard with resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Portal/Presentation registration cleanups (#24563, #24624) affect resource wiring including dashboards.\"},{\"id\":113184,\"name\":\"Create a report pack with resources and section breaks\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Portal/Presentation changes and resource registration updates could affect report pack composition and rendering.\"},{\"id\":113185,\"name\":\"Create a basic chart\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Analytics engine touched by multiple PRs (#24553, #24628, #24655); chart creation exercises core analytic and presentation paths.\"},{\"id\":113175,\"name\":\"Create a basic calculated member\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. PR #24701 (account function improvements) and cross-cutting SharedSource changes affect calculated member formula evaluation.\"},{\"id\":113165,\"name\":\"Change connection for an analytic via right-click menu\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Cross-cutting registration and type-generation PRs (#24523, #24550, #24572) affect resource connection resolution.\"},{\"id\":113190,\"name\":\"Import and export analytics resources\",\"tier\":\"Tier-1\",\"priority\":\"must-run\",\"reasoning\":\"Tier-1. Portal/Presentation registration and SharedSource type-generation changes could break import/export serialisation paths.\"},{\"id\":112708,\"name\":\"Accounting functions on analytics\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"PR #24701 directly improves account functions on analytics; this test exercises exactly those accounting functions across multiple models.\"},{\"id\":112282,\"name\":\"Dynamics 365 BC Cloud with new dynamics extension\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"PR #24498 adds a BC Cloud Codeunit Extension; this test validates the BC Cloud extension download and model processing flow end-to-end.\"},{\"id\":113201,\"name\":\"Apply multiple filters to restrict analytic data\",\"tier\":\"Tier-2\",\"priority\":\"must-run\",\"reasoning\":\"Analytics filtering touched by PR #24641 (slicer requestId) and #24553 (theme/analytics fix); multiple-filter scenario validates compound filter stability.\"},{\"id\":109286,\"name\":\"Reference Relationships\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24551 (Link attributes improvements) is cross-cutting Modeller+Analytics+Shared; Reference Relationships depend on link attribute metadata.\"},{\"id\":99065,\"name\":\"Relative Time folder should show for Date hierarchies in dimension tree\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Analytics dimension tree paths changed in merge PRs (#24628, #24655); relative time folders rely on hierarchy metadata that could be affected.\"},{\"id\":94894,\"name\":\"Smoke Test - Full Designer Role\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Cross-cutting registration PRs (#24523, #24550, #24563) change how roles and permissions are wired; smoke test as Full Designer validates nothing is broken.\"},{\"id\":103931,\"name\":\"Query design panels\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Query design drag-and-drop panels exercise Portal/Analytics paths touched by multiple registration and type-generation PRs.\"},{\"id\":110395,\"name\":\"Copy-pasting and dereferencing query parts\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"SharedSource and query-layer changes (#24572, #24701) could affect copy-paste behaviour in query parts.\"},{\"id\":110217,\"name\":\"Opening Resources from the Dimension Tree\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Portal/Analytics and dimension-tree paths changed; opening resources from the dimension tree exercises these integrated paths.\"},{\"id\":113060,\"name\":\"Process specific pipelines\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24651 (auto source load improvements) and #24578 (future records in partitioned processing) change pipeline execution; verify selective pipeline processing still works.\"},{\"id\":113062,\"name\":\"Process configurations\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Modeller registration/type-generation PRs (#24550, #24572) affect model configuration wiring; process configurations exercise this.\"},{\"id\":113035,\"name\":\"Delete a pipeline\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Modeller cross-cutting changes (#24551, #24550) touch pipeline metadata; deleting a pipeline validates referential integrity post-change.\"},{\"id\":113044,\"name\":\"Calculated columns\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Modeller warehouse pipeline changes (#24651, #24578) could affect calculated columns in warehouse pipelines.\"},{\"id\":111532,\"name\":\"Excel add-in\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Portal/Presentation and SharedSource changes affect serialisation and data delivery paths used by the Excel add-in.\"},{\"id\":113066,\"name\":\"Add a model server\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Registration cleanup PRs (#24523, #24550, #24563) change how model server resources are registered; adding a model server validates this.\"},{\"id\":112197,\"name\":\"Auto materialization to table for pipelines that full load\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24651 (auto source load) and #24578 (future records/partitioned processing) directly influence materialization logic; auto-materialization test validates the interaction.\"},{\"id\":111335,\"name\":\"Create pipeline as delta\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24578 includes future records in partitioned processing, which is foundational to delta/incremental pipeline correctness.\"},{\"id\":92131,\"name\":\"Modeller - Warehouse Sql pipeline preview loads with correct results\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Modeller warehouse SQL pipeline paths touched by #24651 and #24578; preview correctness should be verified.\"},{\"id\":109960,\"name\":\"Pipeline Preview - Full Preview\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"Modeller pipeline preview exercises source load and profiling paths changed by PR #24651 (auto source load improvements).\"},{\"id\":97199,\"name\":\"MYOB - Sales module\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24536 (MYOB page recovery fixes) changes MYOB connector behaviour; sales module data retrieval exercises the fixed paths.\"},{\"id\":112080,\"name\":\"MYOB - Add the Date columns\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"PR #24536 (MYOB page recovery) affects how MYOB tables/pages are retrieved; date column pipelines exercise the recovery logic.\"},{\"id\":113307,\"name\":\"Modeller - Create a full Model - Acumatica (Basic Data source testing)\",\"tier\":\"Tier-2\",\"priority\":\"should-run\",\"reasoning\":\"DataSources area has multiple PRs (#24593, #24597, #24630, #24663); Acumatica basic datasource test validates that datasource framework changes haven't broken new connectors.\"},{\"id\":101389,\"name\":\"Process Performance on Solution with Indexes\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Modeller processing changes (#24651, #24578) could indirectly affect indexed solution performance, but no direct overlap with Sage X3 index processing.\"},{\"id\":106311,\"name\":\"Canceling a processing model\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Modeller processing touched by partitioning and auto source load PRs; cancellation logic could be affected but is lower risk.\"},{\"id\":111959,\"name\":\"Cancel profiling and previewing queries when processing\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Profiling/previewing cancellation indirectly related to PR #24651 auto source load changes; worth running if time allows.\"},{\"id\":96623,\"name\":\"Create a Full Model - MYOB AccountRight Live (Basic Datasource Testing)\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"MYOB AccountRight connector indirectly affected by PR #24536 page recovery fixes; basic model creation validates connector stability.\"},{\"id\":97937,\"name\":\"MYOB - support enumerating, selecting and auto-merging accessible company files\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"MYOB company enumeration could be indirectly affected by PR #24536 page recovery fixes.\"},{\"id\":98874,\"name\":\"MYOB- Company selection and access control improvements\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"MYOB company access control indirectly related to PR #24536 MYOB changes; lower risk as page recovery is a distinct code path.\"},{\"id\":101475,\"name\":\"Date Pipeline should still work without Hierarchy\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Date pipeline processing indirectly touches Modeller core paths changed in #24651/#24578 but no direct dependency.\"},{\"id\":101999,\"name\":\"Datasource - model's warehouse db as datasource\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"DataSources changes (#24593 default load columns API) could affect how warehouse-as-datasource resolves columns.\"},{\"id\":107158,\"name\":\"Enable Source Query checkbox on D365 Finance and SCM solution\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"DataSources area changed; D365 Finance/SCM source query toggle is a distinct path but DataSources cleanup PRs could affect it.\"},{\"id\":98666,\"name\":\"Enforce key uniqueness for field existing pipelines\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Modeller pipeline key uniqueness logic is adjacent to pipeline metadata changes in #24551 link attributes; low direct overlap.\"},{\"id\":110317,\"name\":\"Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack\",\"tier\":\"Tier-2\",\"priority\":\"optional\",\"reasoning\":\"Cross-cutting SharedSource changes could theoretically affect licensing checks, but no licensing-specific PRs are present.\"}],\"summary\":\"This release is broad but concentrated in four main risk zones: (1) Analytics and Query — PRs #24701, #24641, #24553, and multiple merge PRs change account functions, slicer request handling, and theme management, making all analytic and filtering test cases high priority; (2) Modeller pipeline processing — PRs #24651 and #24578 alter auto source load and future-record partitioned processing, requiring thorough pipeline, delta, and materialization test coverage; (3) Cross-cutting registrations and type generation — PRs #24523, #24550, #24563, #24572 touch SharedSource, Portal, and Modeller registration wiring globally, so all resource-creation and connection-change Tier-1 tests are mandatory; (4) ERP connectors — PRs #24498 (BC Cloud Codeunit Extension), #24536 (MYOB page recovery), and #24634 (Xero TB virtual column) require targeted connector validation, with BC Cloud and MYOB being the highest priority given functional changes. Copilot and ClientShared UI icon PRs carry low regression risk to core QA scenarios.\"}",
+      "devops_plan_id": 113469,
+      "devops_suite_id": 113471,
+      "devops_plan_url": "https://dev.azure.com/ZapDev/BI/_testPlans/define?planId=113469",
+      "devops_plan_test_ids_json": "[113189,113193,113136,113191,113178,113184,113185,113175,113165,113190,112708,112282,113201,109286,99065,94894,103931,110395,110217,113060,113062,113035,113044,111532,113066,112197,111335,92131,109960,97199,112080,113307]"
+    },
+    "prs": [
+      {
+        "id": 782,
+        "comparison_id": 4,
+        "pr_number": 24685,
+        "pr_title": "Fix client side type generation for IconNames",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-28 05:19:49 +0000",
+        "merge_commit_sha": "e9ce9379cad06b244b92cd76b6f70cebcf8cbee3",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Portal/Modeller/SharedSource",
+        "risk_reasoning": "Touches SharedSource/Web.Core client typings AND spans multiple product areas (Portal Banner, QueryDesign, ResourceExplorer, Copilot, Modeller UI, and build tooling) — cross-cutting type generation change with blast radius across all TypeScript consumers.",
+        "changed_files_json": "[\"BI/Portal/Client/Banner/NewResource/NewResourceSelectorModel.ts\",\"BI/Portal/Client/Banner/SearchBar/SearchResult.tsx\",\"BI/Portal/Client/QueryDesign/Fields/ColorField.tsx\",\"BI/Portal/Client/QueryDesign/QueryPlaceholder.tsx\",\"BI/Portal/Client/ResourceExplorer/ResourceExplorerModel.ts\",\"BI/Portal/Client/ResourceManipulation/ValidateResourcesTree.tsx\",\"BI/Portal/Client/typings/ColorFieldViewModel.d.ts\",\"BI/Portal/Client/typings/CopilotDebugOverridesViewModel.d.ts\",\"BI/Portal/Client/typings/CopilotResponsePart.d.ts\",\"BI/Portal/Client/typings/QuickAccessTemplateInfo.d.ts\",\"BI/Portal/Client/typings/ResourceTreeNode.d.ts\",\"BI/Portal/Client/typings/SlicerDataRequest.d.ts\",\"BI/Portal/Client/typings/SlicerDataResult.d.ts\",\"Modeller/UI/Client/Commands/ConvertToAgnosticCommand.ts\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/Web.Core/Client/SemanticLayerType.ts\",\"SharedSource/Web.Core/Client/typings/IResourceSelectionItem.d.ts\",\"SharedSource/Web.Core/Client/typings/OpenPaneInfo.d.ts\",\"SharedSource/Web.Core/Client/typings/ResourceReferenceViewModel.d.ts\",\"SharedSource/Web.Core/Client/typings/TypeInfoModel.d.ts\",\"build/BITypeScriptGenerator.cs\"]",
+        "work_items_json": "[{\"id\":113425,\"type\":\"Unknown\",\"title\":\"Work item #113425\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.084Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 788,
+        "comparison_id": 4,
+        "pr_number": 24614,
+        "pr_title": "CopilotModelPatcher updates GUIDs inside strings",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-28 01:30:16 +0000",
+        "merge_commit_sha": "12502c4bd6790c6f5c54c31d52aad117743a8556",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Copilot/SharedSource",
+        "risk_reasoning": "Modifies SharedSource/Core serialization infrastructure (PatchAttributes, JsonPatchHelpers) and CopilotModelPatcher alongside CellSet serialization models — SharedSource/Core changes carry the highest blast radius, affecting all model patching and resource serialization.",
+        "changed_files_json": "[\"BI/Portal/Copilot/AnalysisCopilotTools.cs\",\"BI/Resources/CellSets/SerializationModel/Analysis.cs\",\"BI/Resources/CellSets/SerializationModel/AnalysisConverter.cs\",\"BI/Resources/CellSets/SerializationModel/CellSetResource.cs\",\"BI/Resources/CellSets/SerializationModel/CellSetResourceConversion.cs\",\"BI/Resources/CellSets/SerializationModel/OlapResourceConversion.cs\",\"BI/Resources/CellSets/SerializationModel/SlicersConversion.cs\",\"BI/Resources/Charts/ChartAppearanceSettings.cs\",\"BI/UnitTests/Test.Resources/CellSetResources/AnalysisConverterTests.cs\",\"BI/UnitTests/Test.Resources/CellSetResources/CopilotModelPatcherTests.cs\",\"SharedSource/Core/Copilot/CopilotModelPatcher.cs\",\"SharedSource/Core/Copilot/JsonPatching/JsonPatchHelpers.cs\",\"SharedSource/Core/Resources/Serialization/Attributes/PatchAttributes.cs\"]",
+        "work_items_json": "[{\"id\":113120,\"type\":\"Change Request\",\"title\":\"Copilot - Analysis design\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.173Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 792,
+        "comparison_id": 4,
+        "pr_number": 24624,
+        "pr_title": "update registrations / cleanup",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-24 02:49:14 +0000",
+        "merge_commit_sha": "7f3b937a98d4cef0fce861c554b0907854d701c6",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Portal/Presentation/Resources",
+        "risk_reasoning": "69+ files spanning Portal Controllers, Controls, Presentation/CellSets, Resources/Olap, and many more areas in a registration/cleanup refactor — touching multiple product layers simultaneously creates high risk of dependency injection or runtime registration failures.",
+        "changed_files_json": "[\"BI/Portal/Controllers/ImageGeneratorController.cs\",\"BI/Portal/Controllers/NotificationsController.cs\",\"BI/Portal/Controls/JavaScriptBootstrap/BrandingSettingsBootstrapPane.cs\",\"BI/Portal/Controls/ResourceLoadManager.cs\",\"BI/Portal/Controls/Settings/PortalSettingsPagesProvider.cs\",\"BI/Portal/Controls/UserControls/Resolutions/MapConnectionsContext.cs\",\"BI/Portal/Controls/UserControls/Resolutions/MissingMembersContext.cs\",\"BI/Portal/Controls/UserControls/Resolutions/MissingMembersController.cs\",\"BI/Portal/Controls/UserControls/Resolutions/ResourceValidationController.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/Imports/ImportController.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/Imports/ImportReferencesProvider.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/PivotTables/PivotTableController.cs\",\"BI/Portal/Helpers/AllImageContentProvider.cs\",\"BI/Portal/Helpers/BrowserSpecificCssReplacer.cs\",\"BI/Portal/Models/DimensionTree/DimensionTreeNodeSpecifierFactory.cs\",\"BI/Portal/Models/DimensionTree/DimensionTreeOrdering.cs\",\"BI/Portal/Models/DimensionTree/DimensionTreePresenter.cs\",\"BI/Portal/Models/Login/LoginTooltipsClientObjectBuilder.cs\",\"BI/Portal/Models/OrganizationVariablesClientObjectBuilder.cs\",\"BI/Portal/Models/ResourcePathModelBinder.cs\",\"BI/Portal/Models/ThemeComponentsClientObjectBuilder.cs\",\"BI/Portal/Owin/Authentication/DynamicAuthenticationMiddleware.cs\",\"BI/Portal/Owin/RequestLocalizationMiddleware.cs\",\"BI/Portal/Printing/Resources/Charts/ChartFragmentFactory.cs\",\"BI/Portal/ViewStates/ImportViewStateFactory.cs\",\"BI/Resources/CubeModel/ConnectedCubeDefinitionFactory.cs\",\"BI/Resources/ImportExport/ImportCubeMappingProvider.cs\",\"BI/Resources/Olap/Connection/Adomd/AdomdDataManager.cs\",\"BI/Resources/Olap/NullFormatProvider.cs\",\"BI/Resources/Query/Deployment/DeployToCubeValidator.cs\",\"BI/Resources/Resolutions/ResourceErrorChecker.cs\",\"BI/UnitTests/Test.Portal/Controls/PortalSettingsPagesProviderTests.cs\",\"BI/UnitTests/Test.Portal/Imports/ImportControllerTests.cs\",\"BI/UnitTests/Test.Resources/Olap/Deployment/DeployToCubeTests.cs\",\"BI/UnitTests/Test.Resources/Olap/Deployment/DeployToCubeValidatorTests.cs\",\"Modeller/Core/DomainModel/ModelState.cs\",\"Modeller/Core/DomainModel/Pipelines/Results/DatabaseObject.cs\",\"Modeller/DynamicsAx5.Smart/ReportingDimensions/ChartOfAccounts/DynamicsAx5CalculationGenerator.cs\",\"Modeller/DynamicsAx6.Smart/ReportingDimensions/ChartOfAccounts/DynamicsAx6CalculationGenerator.cs\",\"Modeller/DynamicsAx7.Smart/ReportingDimensions/ChartOfAccounts/DynamicsAx7CalculationGenerator.cs\",\"Modeller/Sage300.Smart/CompanyColumn/Sage300CompanySourceRelationshipMappings.cs\",\"Modeller/Tests/Core.UnitTests/Relational/DatabaseObjectTest.cs\",\"Modeller/UI/DataLimits/WarehouseStorageNotificationsProvider.cs\",\"Modeller/tests/Modeller.UI.Tests/DataLimits/WarehouseStorageNotificationsProviderTests.cs\",\"SharedSource/Core/Copilot/CopilotAccessLevels.cs\",\"SharedSource/Core/Localization/ResourceLocalization/SingleResourceLocalizationProvider.cs\",\"SharedSource/Core/Logging/ActivityLogResourceDetailsBuilder.cs\",\"SharedSource/Core/Logging/ModelProcessingLogEventRenderer.cs\",\"SharedSource/Core/Logging/TaskLogEventRenderer.cs\",\"SharedSource/Core/Resources/EmbeddedResourceXmlWriter.cs\",\"SharedSource/Core/Resources/ResourceAncestryService.cs\",\"SharedSource/Core/Resources/Upgrades/SystemResourceUpgrader.cs\",\"SharedSource/Core/Settings/LogVerbosityChangeToLogEventLevel.cs\",\"SharedSource/Core/Settings/QueueWorkItemTypeUpgrader.cs\",\"SharedSource/Core/Settings/RemoveSecureMasterNodeUriUpgrader.cs\",\"SharedSource/UnitTests/Test.Core/Settings/BooleanSettingTests.cs\",\"SharedSource/UnitTests/Test.Web.Core/Summary/ResourceSet/ResourceListSummaryBuilderTests.cs\",\"SharedSource/UnitTests/TestUtils.Core/Persistence/MemoryPersistenceManager.cs\",\"SharedSource/Web.Core/Api/CultureInfoClientObjectBuilder.cs\",\"SharedSource/Web.Core/Api/UserVariablesClientObjectBuilder.cs\",\"SharedSource/Web.Core/Client/typings/StringNode.d.ts\",\"SharedSource/Web.Core/Copilot/ResourceLinkBuilder.cs\",\"SharedSource/Web.Core/Models/BackgroundTasks/TaskListSummaryModelBuilder.cs\",\"SharedSource/Web.Core/Models/Summaries/SummaryNodes/StringNode.cs\",\"SharedSource/Web.Core/ReflectionHelper.cs\",\"SharedSource/Web.Core/Resources/ResourceTypeInfoClientObjectBuilder.cs\",\"SharedSource/Web.Core/Tooltips/TooltipsGenerator.cs\",\"SharedSource/Web.Core/UrlParameter.cs\",\"SharedSource/Web.Core/ZapVariablesClientObjectBuilder.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.206Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 794,
+        "comparison_id": 4,
+        "pr_number": 24628,
+        "pr_title": "Merge releases/2026.03 to master",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-23 03:45:17 +0000",
+        "merge_commit_sha": "a132740f66d383163cb44c585407d51d43c4c449",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Portal/Copilot/Analytics",
+        "risk_reasoning": "88+ file release merge spanning Portal API, Copilot infrastructure, Controllers, Client UI, and SharedSource — large release merge across multiple product areas with cumulative risk from all included changes.",
+        "changed_files_json": "[\"BI/Portal/Api/AIToolsApi/AIToolsApiConfiguration.cs\",\"BI/Portal/Client/CellSets/AnalysisPanelProvider.tsx\",\"BI/Portal/Client/Copilot/ChatEventsList.tsx\",\"BI/Portal/Client/Copilot/CopilotChat.tsx\",\"BI/Portal/Client/Copilot/CopilotChatController.ts\",\"BI/Portal/Client/Copilot/CopilotChatModel.ts\",\"BI/Portal/Client/Copilot/CopilotChatPanel.tsx\",\"BI/Portal/Client/Copilot/MessageInput.tsx\",\"BI/Portal/Client/DesignBar/StandardResourceMenu.ts\",\"BI/Portal/Client/ResponsePartType.ts\",\"BI/Portal/Client/typings/AddCalculationReferencesRequest.d.ts\",\"BI/Portal/Client/typings/CellSetResourceController.d.ts\",\"BI/Portal/Client/typings/ClientText.d.ts\",\"BI/Portal/Client/typings/CopilotChatController.d.ts\",\"BI/Portal/Client/typings/CopilotResponsePart.d.ts\",\"BI/Portal/Client/typings/CopilotSessionData.d.ts\",\"BI/Portal/Client/typings/DownloadResourceXmlController.d.ts\",\"BI/Portal/Controllers/CellSetResourceController.cs\",\"BI/Portal/Controllers/CopilotChatController.cs\",\"BI/Portal/Controllers/DownloadResourceXmlController.cs\",\"BI/Portal/Controllers/TeamsBotController.cs\",\"BI/Portal/Copilot/AnalysisCopilotTools.cs\",\"BI/Portal/Copilot/CopilotChatProvider.cs\",\"BI/Portal/Copilot/CopilotClientProvider.cs\",\"BI/Portal/Copilot/CubeDefinitionCopilotTools.cs\",\"BI/Portal/Copilot/TokenLimiting/MaxTokensPerUserSession.cs\",\"BI/Portal/Copilot/TokenLimiting/TokenUsageTracker.cs\",\"BI/Portal/CopilotText.Designer.cs\",\"BI/Portal/CopilotText.resx\",\"BI/Portal/Portal.csproj\",\"BI/Portal/ViewStates/Analysis/CellSetResourceViewState.cs\",\"BI/Resources/CellSets/SerializationModel/Analysis.cs\",\"BI/Resources/CellSets/SerializationModel/AnalysisConverter.cs\",\"BI/Resources/CellSets/SerializationModel/CellSetResource.cs\",\"BI/Resources/CellSets/SerializationModel/CellSetResourceConversion.cs\",\"BI/Resources/CellSets/SerializationModel/OlapResourceConversion.cs\",\"BI/Resources/CellSets/SerializationModel/QueryConverter.cs\",\"BI/Resources/CellSets/SerializationModel/QueryPart.cs\",\"BI/Resources/CellSets/SerializationModel/SlicersConversion.cs\",\"BI/Resources/CubeModel/CubeDefinition.cs\",\"BI/Resources/Query/Deployment/ScriptDomGenerator.cs\",\"BI/Resources/Query/DomGenerators/DomGenerator.cs\",\"BI/Resources/Query/QueryMember.cs\",\"BI/Resources/Query/QuerySchemas/DateDimensionKeyFormatProvider.cs\",\"BI/Resources/XpressionGrid/PartialTupleTreeNodeInfo.cs\",\"BI/UnitTests/Test.Portal/Copilot/Blank.zap\",\"BI/UnitTests/Test.Portal/Copilot/CopilotEvalTestBase.cs\",\"BI/UnitTests/Test.Portal/Copilot/Evals/ReportBuildingEvalTests.cs\",\"BI/UnitTests/Test.Portal/Copilot/Evaluators/ReportDesignEquivalenceEvaluator.cs\",\"BI/UnitTests/Test.Portal/Copilot/Evaluators/authoring-expected-designs.md\",\"BI/UnitTests/Test.Portal/Copilot/Notifications/AINotificationEvaluatorTests.cs\",\"BI/UnitTests/Test.Portal/Copilot/Notifications/FakeAnalysisCopilotTools.cs\",\"BI/UnitTests/Test.Portal/Copilot/TokenLimiting/TokenUsageTrackerTests.cs\",\"BI/UnitTests/Test.Portal/Test.Portal.csproj\",\"BI/UnitTests/Test.Resources/CellSetResources/AnalysisConverterTests.cs\",\"BI/UnitTests/Test.Resources/CellSetResources/CopilotModelPatcherTests.cs\",\"BI/UnitTests/Test.Resources/Olap/Query/DateDimensionKeyFormatProviderTests.cs\",\"Directory.Packages.props\",\"Modeller/UI/Client/Commands/AddReferencedCalculationCommand.ts\",\"Modeller/UI/Client/Commands/RemoveReferencedCalculationCommand.ts\",\"Modeller/UI/Client/typings/ClientText.d.ts\",\"Modeller/UI/Client/typings/ModelReportingCalculationsController.d.ts\",\"Modeller/UI/Client/typings/ProcessModelJobCode.d.ts\",\"Modeller/UI/Copilot/ModellerCopilotTools.cs\",\"Modeller/UI/Copilot/ModellerCopilotToolsText.Designer.cs\",\"Modeller/UI/Copilot/ModellerCopilotToolsText.resx\",\"Modeller/UI/Resources/Serialization/Upgraders/ModelServerResource/V2016P1R02/FromV2016P1R01MoveLastConnectionSummaryAndStatusUpgrader.cs\",\"Modeller/UI/Resources/SerializationModels/DataSources/DataSourceSettingsCollection.cs\",\"Modeller/UI/Resources/SerializationModels/ModelResource.cs\",\"Modeller/UI/Resources/SerializationModels/PipelineResource.cs\",\"Modeller/UI/Serialization/Converters/DataSourceSettingsCollectionConverter.cs\",\"Modeller/UI/Serialization/Converters/ModelResourceConverter.cs\",\"Modeller/UI/Serialization/Converters/PipelineResourceConverter.cs\",\"SharedSource/Core/Copilot/CopilotJsonSchemaGenerator.cs\",\"SharedSource/Core/Copilot/SchemaReferenceAttribute.cs\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/CoreSwitch.cs\",\"SharedSource/Core/Resources/Serialization/JsonConverters/DictionaryEntryArrayConverterFactory.cs\",\"SharedSource/Core/Resources/Serialization/JsonConverters/SortedDictionaryConverterFactory.cs\",\"SharedSource/Core/Resources/Serialization/JsonSerializationOptions.cs\",\"SharedSource/Core/Resources/SerializationModels/ResourceConverter.cs\",\"SharedSource/Core/Resources/SerializationModels/TypedArrayValue.cs\",\"SharedSource/UnitTests/Test.Core/Copilot/CopilotJsonSchemaGeneratorTests.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/Web.Core/Client/typings/ClientText.d.ts\",\"SharedSource/Web.Core/Copilot/DocumentationCopilotTools.cs\",\"SharedSource/Web.Core/Mvc/ServerSentEvents.cs\",\"build/Build.cs\"]",
+        "work_items_json": "[{\"id\":113120,\"type\":\"Change Request\",\"title\":\"Copilot - Analysis design\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.224Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 795,
+        "comparison_id": 4,
+        "pr_number": 24599,
+        "pr_title": "Replacing AI function schema generation",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-18 01:11:48 +0000",
+        "merge_commit_sha": "7e5871cb5d30b53236a6b311a50df1a77fb22a9b",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "SharedSource/Copilot",
+        "risk_reasoning": "Replaces AI function schema generation in SharedSource/Core (CopilotJsonSchema, CopilotJsonSchemaGenerator, JsonSchemaTransformer, serialization converters) — fundamental change to shared JSON schema and serialization infrastructure used by all Copilot tool definitions.",
+        "changed_files_json": "[\"BI/Resources/CellSets/SerializationModel/QueryPart.cs\",\"BI/UnitTests/Test.Resources/CellSetResources/CopilotModelPatcherTests.cs\",\"Modeller/UI/Resources/SerializationModels/ModelResource.cs\",\"SharedSource/Core/Copilot/CopilotJsonSchema.cs\",\"SharedSource/Core/Copilot/CopilotJsonSchemaGenerator.cs\",\"SharedSource/Core/Copilot/JsonPatching/JsonPatchHelpers.cs\",\"SharedSource/Core/Copilot/JsonPatching/JsonPatchOperation.cs\",\"SharedSource/Core/Copilot/NullableMetadata.cs\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/Resources/Serialization/IJsonSchemaConverter.cs\",\"SharedSource/Core/Resources/Serialization/JsonConverters/DictionaryEntryArrayConverterFactory.cs\",\"SharedSource/Core/Resources/Serialization/JsonConverters/TypedArrayValueConverter.cs\",\"SharedSource/Core/Resources/Serialization/JsonConverters/TypedPrimitiveConverter.cs\",\"SharedSource/Core/Resources/Serialization/JsonSchemaTransformer.cs\",\"SharedSource/Core/Resources/Serialization/JsonSerializationOptions.cs\",\"SharedSource/Core/Resources/SerializationModels/Translations.cs\",\"SharedSource/Core/Resources/SerializationModels/TranslationsConverter.cs\",\"SharedSource/UnitTests/Test.Core/Copilot/CopilotJsonAssertions.cs\",\"SharedSource/UnitTests/Test.Core/Copilot/CopilotJsonSchemaGeneratorTests.cs\",\"SharedSource/UnitTests/Test.Core/Copilot/CopilotJsonSchemaTests.cs\",\"SharedSource/UnitTests/Test.Core/Copilot/NullableMetadataTests.cs\",\"SharedSource/UnitTests/Test.Core/Resources/Serialization/JsonConverters/TypedArrayValueConverterTests.cs\",\"SharedSource/UnitTests/Test.Core/Resources/Serialization/JsonConverters/TypedPrimitiveConverterTests.cs\",\"SharedSource/UnitTests/Test.Core/Resources/Serialization/JsonSchemaTransformerTests.cs\",\"SharedSource/UnitTests/Test.Core/Resources/Serialization/PersistenceJsonSerializationOptionsTests.cs\",\"SharedSource/UnitTests/Test.Core/Test.Core.csproj\",\"SharedSource/Web.Core/Copilot/ICopilotToolProvider.cs\"]",
+        "work_items_json": "[{\"id\":113120,\"type\":\"Change Request\",\"title\":\"Copilot - Analysis design\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.236Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 796,
+        "comparison_id": 4,
+        "pr_number": 24563,
+        "pr_title": "update registrations / cleanup",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-17 06:12:10 +0000",
+        "merge_commit_sha": "5181592b18acadce505a8cf5772bfd9f5d73c4e8",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Portal/Presentation/Resources",
+        "risk_reasoning": "109+ files in a registration/cleanup refactor across Portal modules, Presentation/CellSets, Resources/Events, Olap connections, and many more — the largest PR in the set, touching virtually every product layer with high DI/runtime regression risk.",
+        "changed_files_json": "[\"BI/Portal/Controllers/PortalContainerBuilderFactory.cs\",\"BI/Portal/Controllers/UserImpersonationContextFactoryWrapper.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/Dashboards/ViewStateInterCellFilterProvider.cs\",\"BI/Portal/Helpers/Branding/BrandingProvider.cs\",\"BI/Portal/Models/Analysis/PivotTableSettingsSummaryBuilder.cs\",\"BI/Portal/Models/UpgradeReportViewModel.cs\",\"BI/Portal/Modules/BackgroundTasksModule.cs\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/Modules/SlackApiClientWrapper.cs\",\"BI/Portal/Modules/ViewStateModule.cs\",\"BI/Portal/Portal.csproj\",\"BI/Portal/Printing/HtmlFragment/HtmlFragmentMeasurer.cs\",\"BI/Portal/RouteConstraint.cs\",\"BI/Portal/UpgradeReportBuilder.cs\",\"BI/Portal/ViewStates/Dashboard/DashboardCellViewState.cs\",\"BI/Portal/ViewStates/Dashboard/DashboardCellViewStateFactory.cs\",\"BI/Presentation/CellSets/CellSetConnectionResolver.cs\",\"BI/Presentation/CellSets/SimpleCellSetQueryBuilder.cs\",\"BI/Resources/CellSets/SerializationModel/AnalysisConverter.cs\",\"BI/Resources/DataSources/ConnectionTesting/CanQueryValidator.cs\",\"BI/Resources/DataSources/OlapDataSourceConnectionProvider.cs\",\"BI/Resources/Events/ActionEvaluator.cs\",\"BI/Resources/Events/BenchmarkAction.cs\",\"BI/Resources/Events/EventEvaluator.cs\",\"BI/Resources/Events/ISlicingAction.cs\",\"BI/Resources/Events/PersistenceCleanupAction.cs\",\"BI/Resources/Olap/Connection/Amo/AmoServerDataManager.cs\",\"BI/Resources/Olap/CubeConnectionInfoFactory.cs\",\"BI/Resources/Olap/QueryTracking/QueryTracker.cs\",\"BI/Resources/PublicationRules/PublicationRule.cs\",\"BI/UnitTests/Test.Portal/Models/BackgroundTasks/ActionResourceModelBuilderTests.cs\",\"BI/UnitTests/Test.Portal/Models/Diagnostics/OpenResourcesExportProviderTests.cs\",\"BI/UnitTests/Test.Portal/Models/DimensionTree/CubeConnectionProviderTests.cs\",\"BI/UnitTests/Test.Portal/Models/Folders/FolderItemBuilderTests.cs\",\"BI/UnitTests/Test.Portal/Models/Folders/FolderViewModelBuilderTests.cs\",\"BI/UnitTests/Test.Portal/Owin/WafSafeOpenIdConnectAuthenticationHandlerTests.cs\",\"BI/UnitTests/Test.Portal/PageKeyTests.cs\",\"BI/UnitTests/Test.Portal/Persistence/DatabaseConfigurerTests.cs\",\"BI/UnitTests/Test.Portal/PivotTables/HeaderCssTests.cs\",\"BI/UnitTests/Test.Portal/PivotTables/PivotTableStyleBuilderTests.cs\",\"BI/UnitTests/Test.Portal/Placeholders/QueryPartFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/ErrorPrintPageFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/PassThroughStyleSheetFactory.cs\",\"BI/UnitTests/Test.Portal/Printing/Phantom/FootnoteOffsetFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Phantom/ResourcePrintModelBuilderTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Phantom/ScreenSizedCellSetFragmentFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Phantom/TitleFragmentFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Phantom/TitlePrependingHtmlPrinterTests.cs\",\"BI/UnitTests/Test.Portal/Printing/ReportPacks/PrinterFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Scorecard/ScorecardFragmentFactoryTests.cs\",\"BI/UnitTests/Test.Portal/Printing/Scorecard/ScorecardPrintModelBuilderTests.cs\",\"BI/UnitTests/Test.Portal/PublishingTests.cs\",\"BI/UnitTests/Test.Portal/PublishingTestsBase.cs\",\"BI/UnitTests/Test.Portal/Resolutions/ClientConnectionMappingFactoryTests.cs\",\"BI/UnitTests/Test.Portal/ResourcePathFactoryTests.cs\",\"BI/UnitTests/Test.Portal/RouteConstraintTest.cs\",\"BI/UnitTests/Test.Portal/RouteExtensionsTest.cs\",\"BI/UnitTests/Test.Portal/ViewStates/TestResourceViewState.cs\",\"BI/UnitTests/Test.Resources/Events/PersistenceCleanupActionTests.cs\",\"Modeller/Core/DomainModel/Pipelines/ColumnWithAnalyticsBuilder.cs\",\"Modeller/Core/DomainModel/Pipelines/Transforms/Initial/TruncateStrings.cs\",\"Modeller/Core/DomainModel/Pipelines/Updaters/SetDefaultRelationshipMappingsUpdater.cs\",\"Modeller/Core/DomainModel/Processing/DataConversionException.cs\",\"Modeller/Core/DomainModel/Processing/DataOverflowException.cs\",\"Modeller/Core/DomainModel/Processing/FailureReasons/NullValueInNonNullColumnFailureReason.cs\",\"Modeller/Core/DomainModel/Processing/InsertedNullDataException.cs\",\"Modeller/Core/DomainModel/Processing/InsufficientDiskSpaceException.cs\",\"Modeller/Core/DomainModel/Processing/NullValueInWarehouseKeyColumnException.cs\",\"Modeller/SageX3.Smart/ReportingDimensions/FinancialDimensions/SageX3FinancialDimensionCalculationExpressionBuilder.cs\",\"Modeller/SageX3.Smart/SageX3ConfigurableSourceColumnNameGenerator.cs\",\"Modeller/SageX3.Smart/SageX3DataSourceSchema.cs\",\"Modeller/Tests/Modeller.UI.Tests/Models/ModelResourceTests.cs\",\"Modeller/Tests/SageX3.Smart.UnitTests/SageX3FinancialDimensionCalculationExpressionBuilderTests.cs\",\"Modeller/Tests/SageX3.Smart.UnitTests/SageX3FinancialDimensionsFkNewSelectedColumnsUpdaterTests.cs\",\"Modeller/Tests/SageX3.Smart.UnitTests/SageX3LookupFinancialDimensionsForAccountEntryLinesUpdaterTests.cs\",\"Modeller/Tests/SageX3.Smart.UnitTests/SageX3LookupFinancialDimensionsFromAnalyticalAccountingLinesUpdaterTests.cs\",\"Modeller/UI/Controllers/DataSourceOAuthController.cs\",\"Modeller/UI/Controllers/Helper/Solution/SolutionContentBuilder.cs\",\"Modeller/UI/Controllers/Helper/Solution/SolutionPackager.cs\",\"Modeller/UI/Controllers/Helper/Solution/SolutionsProvider.cs\",\"Modeller/UI/Controllers/ModelServerOAuthController.cs\",\"Modeller/UI/DataSource/OAuth/DataSourceOAuthReferenceProvider.cs\",\"Modeller/UI/DataSource/OAuth/ModelServerOAuthReferenceProvider.cs\",\"Modeller/UI/ModelUpdate/ModelSolutionUpdateChecker.cs\",\"Modeller/UI/Processing/ModelProcessingLoggerFactory.cs\",\"Modeller/UI/Resources/MicrosoftModelServerResourceConnectionProvider.cs\",\"Modeller/UI/Resources/ModelResource.cs\",\"Modeller/UI/Resources/ModelResourceViewState.cs\",\"Modeller/UI/Resources/ModellerResourceViewState.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleDimensionPermissionCubeMemberFilterConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleDimensionPermissionFilterConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleDimensionPermissionNamedSetFilterConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleDimensionPermissionsConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleMemberConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleModelPermissionsConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ModelRoleSchemaPermissionsConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ResolvedModelRoleMemberConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/ResolvedModelRoleMembersConverter.cs\",\"Modeller/UI/Resources/Serialization/Converters/RoleMemberResolutionResultConverter.cs\",\"Modeller/UI/Resources/SolutionResourceDerivedIconProvider.cs\",\"Modeller/UI/Resources/SolutionResourcePersistHandler.cs\",\"SharedSource/Core/Logging/TaskLogEventRenderer.cs\",\"SharedSource/Core/Pooling/NotifyingResourcePool.cs\",\"SharedSource/Core/Resources/Events/IAction.cs\",\"SharedSource/Core/Resources/ImportExport/DisconnectedResourceSetFactory.cs\",\"SharedSource/Core/Resources/SystemResourceRepository.cs\",\"SharedSource/Core/TenantUpgradeService.cs\",\"SharedSource/Web.Core/Routing/RouteCollectionWrapper.cs\",\"SharedSource/Web.Core/UrlParameter.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.346Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 802,
+        "comparison_id": 4,
+        "pr_number": 24551,
+        "pr_title": "Link attributes improvements",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-07 06:02:55 +0000",
+        "merge_commit_sha": "8b2dbe6bef95418ba9ef9c4f34425796c4098d2b",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (Modeller + Analytics + Shared)",
+        "risk_reasoning": "Changes span SharedSource/Core, SharedSource/Query, Modeller/AnalysisServices, Modeller/Ssas.Tabular, Modeller/CubeModel, and BI/Portal/Controls — maximum blast radius touching the query framework, SSAS cube generation, and portal rendering simultaneously.",
+        "changed_files_json": "[\"BI/Portal/Controls/UserControls/ResourceControls/PivotTables/PivotTableRenderer.cs\",\"BI/Resources/CellSets/CellSetEvaluator.cs\",\"BI/Resources/CellSets/LinkAttributeMemberProperties.cs\",\"BI/Resources/CubeModel/CubeDefinition.cs\",\"BI/Resources/Olap/Connection/Amo/AmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/CachingAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/IAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Tom/TomDataManager.cs\",\"BI/Resources/Resources.csproj\",\"BI/UnitTests/TestUtils.BI.Common/Cube/TestCubeDefinition.cs\",\"Modeller/AnalysisServices/CubeGeneration/Dimensions/DimensionGenerator.cs\",\"Modeller/CubeModel/CubeLinkAttributeAnnotation.cs\",\"Modeller/CubeModel/CubeModel.csproj\",\"Modeller/CubeModel/Dimension.cs\",\"Modeller/CubeModelBuilders/DimensionGenerator.cs\",\"Modeller/Ssas.Tabular/DomainModels/ModellerTable.cs\",\"Modeller/Ssas.Tabular/ModelGeneration/TableGenerator.cs\",\"Modeller/Ssas.Tabular/TabularModelUpdaters/TabularTableUpdater.cs\",\"Modeller/Tests/AnalysisServices.UnitTests/CubeGeneration/Dimensions/DimensionGeneratorTest.cs\",\"Modeller/Tests/Modeller.UI.Tests/Client/PipelineResource/TaskPane/ColumnAnalyticsTests.ts\",\"Modeller/Tests/Ssas.Tabular.UnitTests/TabularTableUpdaterTests.cs\",\"Modeller/Tests/TestCommon/CubeModelHelpers.cs\",\"Modeller/UI/Client/PipelineResource/TaskPane/ColumnAnalytics.ts\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/CoreSwitch.cs\",\"SharedSource/Core/Resources/DataSources/AnnotationNames.cs\",\"SharedSource/Core/Resources/DataSources/LinkAttributeAnnotation.cs\",\"SharedSource/Query/CubeModel/ICubeDefinition.cs\"]",
+        "work_items_json": "[{\"id\":113011,\"type\":\"Change Request\",\"title\":\"Deep links\",\"state\":\"Pending review\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.383Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 803,
+        "comparison_id": 4,
+        "pr_number": 24550,
+        "pr_title": "update some registrations",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-02 06:19:41 +0000",
+        "merge_commit_sha": "bf8c7029939aef077f9093a22cc890fe7034f7c8",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (Shared + Portal + Modeller)",
+        "risk_reasoning": "Heavy SharedSource/Core changes covering security (ActiveDirectoryService, ProfileOwnershipHelper, SystemUserContext), licensing, and background task infrastructure, combined with Portal authentication (OwinPaths, MicrosoftAppUserAuthenticator) and Modeller UI — high blast radius across auth, licensing, and job execution.",
+        "changed_files_json": "[\"BI/Portal/Global.asax.cs\",\"BI/Portal/Helpers/ApplicationInsights/ApplicationInsightsTenantContext.cs\",\"BI/Portal/Helpers/ApplicationInsights/TelemetryConfigurationManager.cs\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/Modules/ResourceViewsModule.cs\",\"BI/Portal/Modules/SecurityModule.cs\",\"BI/Portal/Owin/Authentication/MicrosoftAppUserAuthenticator.cs\",\"BI/Portal/Owin/OwinPaths.cs\",\"BI/Portal/ViewStates/TypeSwitchingViewStateFactory.cs\",\"Modeller/UI/Commands/ColumnAddLinkFormatColumnCommand.cs\",\"Modeller/UI/Commands/ColumnRemoveLinkFormatColumnCommand.cs\",\"Modeller/UI/Controllers/SolutionUpgrade/SolutionUpgrade.cs\",\"Modeller/UI/Resources/DomainReferences/NullDataSource.cs\",\"Modeller/UI/Resources/TypeInfo/SolutionResourceTypeInfo.cs\",\"SharedSource/Core/BackgroundTasks/Queue/WorkPump/HostLevelWorkPumpLocks.cs\",\"SharedSource/Core/BackgroundTasks/Queue/WorkPump/SwitchingWorkPumpRateLimiter.cs\",\"SharedSource/Core/Core.csproj\",\"SharedSource/Core/Licensing/LicenseRequestInformationBuilder.cs\",\"SharedSource/Core/Licensing/LicenseUpdateRetryableRunnerFactory.cs\",\"SharedSource/Core/Licensing/MachineInformationBuilder.cs\",\"SharedSource/Core/Licensing/WebClientProvider.cs\",\"SharedSource/Core/Resources/ImportExport/DisconnectedResourceSetSerializer.cs\",\"SharedSource/Core/Security/ActiveDirectoryService.cs\",\"SharedSource/Core/Security/ProfileOwnershipHelper.cs\",\"SharedSource/Core/Security/SystemUserContext.cs\",\"SharedSource/Core/SharedSecureKey.cs\",\"SharedSource/Licensing/ILicenseRequestRecorder.cs\",\"SharedSource/UnitTests/Test.Core/ImportExport/ResourceExporterTests.cs\",\"SharedSource/UnitTests/Test.Core/Licensing/MachineInformationBuilderTests.cs\",\"SharedSource/UnitTests/Test.Core/Security/ProfileOwnershipHelperTests.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.387Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 804,
+        "comparison_id": 4,
+        "pr_number": 24523,
+        "pr_title": "update registrations",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-02 02:01:53 +0000",
+        "merge_commit_sha": "b5296d507264f27379b2612960d1f5443e6368a3",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (Shared + Portal + Modeller)",
+        "risk_reasoning": "SharedSource/Core changes to ResourceImportOrPasteHandler, ResourceConverter, ConditionEvaluator, and PermalinksRepository affect import/export, event evaluation, and persistence across the entire product, compounded by Portal module and Modeller Core pipeline changes.",
+        "changed_files_json": "[\"BI/Portal/Helpers/Scripts/ChartTextProvider.cs\",\"BI/Portal/Modules/ImportExportModule.cs\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/Modules/XmlAuthenticatorWrapper.cs\",\"BI/Portal/Portal.csproj\",\"BI/Resources/Events/CompositeEventEvaluator.cs\",\"BI/Resources/ImportExport/ImportExportController.cs\",\"BI/Resources/Themes/ThemeComponentReference.cs\",\"BI/Resources/Themes/ThemeComponentReferenceProvider.cs\",\"BI/Resources/Themes/ThemeManager.cs\",\"BI/UnitTests/Test.Portal/Printing/ReportPacks/PrintUnitTests.cs\",\"BI/UnitTests/Test.Portal/PublishingTestsBase.cs\",\"BI/UnitTests/Test.Resources/Events/SystemActionProviderTests.cs\",\"Modeller/Core/DomainModel/Pipelines/Updaters/ChangeColumnSelectionUpdater.cs\",\"Modeller/NuGet/PackageManagement/PackageManager.cs\",\"Modeller/Tests/Core.UnitTests/DomainModel/Pipelines/Loaders/Filter/GlobalDateFilterProviderTests.cs\",\"Modeller/Tests/Core.UnitTests/DomainModel/Pipelines/Loaders/FromDateSettingsLoaderDataReaderTests.cs\",\"Modeller/UI/Controllers/Helper/ModelServerAppRegistration.cs\",\"Modeller/UI/Copilot/ModellerCopilotTools.cs\",\"Modeller/UI/Modules/ModellerModule.cs\",\"Modeller/UI/NuGet/PackageInstaller.cs\",\"SharedSource/Core/Persistence/PermalinksRepository.cs\",\"SharedSource/Core/Resources/Events/ConditionEvaluator.cs\",\"SharedSource/Core/Resources/ResourceImportOrPasteHandler.cs\",\"SharedSource/Core/Resources/SerializationModels/ResourceConverter.cs\",\"SharedSource/UnitTests/TestUtils.Core/Persistence/TestPermalinkRepository.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.397Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 805,
+        "comparison_id": 4,
+        "pr_number": 24539,
+        "pr_title": "Open model background tasks from data limits",
+        "pr_author": "Benjamin Prince",
+        "pr_completed_date": "2026-04-02 01:13:09 +0000",
+        "merge_commit_sha": "bbcac2c3545071dbff672eeb6956f21c25e01450",
+        "risk_score": 1,
+        "risk_category": "cross_cutting",
+        "product_area": "Cross-cutting (Shared + Portal + Analytics)",
+        "risk_reasoning": "Modifies both SharedSource/Web.Core (BackgroundTasksController, TaskTimeRange typings) and SharedSource/Core/BackgroundTasks alongside Portal client UI and CellSets — any change to the shared background task infrastructure has broad impact on all async operations across the platform.",
+        "changed_files_json": "[\"BI/Portal/Client/BackgroundTasks/BackgroundTasksController.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksData.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksOptionProvider.ts\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksPanelProvider.tsx\",\"BI/Portal/Client/BackgroundTasks/BackgroundTasksTimeRange.ts\",\"BI/Portal/Client/CellSets/OnDemandRefreshDesignPopup.tsx\",\"BI/Portal/Client/Settings/DataLimits/DataLimits.tsx\",\"BI/Portal/Client/typings/BackgroundTaskPaneParameters.d.ts\",\"BI/Portal/Client/typings/ClientText.d.ts\",\"BI/Portal/Controls/JavaScriptBootstrap/BackgroundTaskPaneParameters.cs\",\"BI/Portal/Controls/JavaScriptBootstrap/BackgroundTasksBootstrapPane.cs\",\"BI/Portal/Controls/ResourceLoadManager.cs\",\"BI/Portal/Controls/Settings/SettingsDisplay.ascx.cs\",\"BI/Portal/Controls/UserControls/ResourceControls/PublicationRules/PublicationRuleView.ascx.cs\",\"BI/Portal/Portal.csproj\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksControllerTests.ts\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksDataTests.ts\",\"BI/UnitTests/Test.Portal/Client/BackgroundTasks/BackgroundTasksOptionProviderTests.ts\",\"Modeller/Tests/Modeller.UI.Tests/Javascript/Desktop/Controllers/Shared/ProcessButtonTests.js\",\"Modeller/UI/Javascript/Desktop/Controllers/Shared/ProcessButton.js\",\"SharedSource/Core/BackgroundTasks/TaskTimeRange.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/EnumDefinitions.js\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/Web.Core/Client/typings/TaskTimeRange.d.ts\",\"SharedSource/Web.Core/Client/typings/TimeRangeOption.d.ts\",\"SharedSource/Web.Core/Controllers/BackgroundTasksController.cs\"]",
+        "work_items_json": "[{\"id\":113213,\"type\":\"Task\",\"title\":\"Improve data limits ux\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.403Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 781,
+        "comparison_id": 4,
+        "pr_number": 24701,
+        "pr_title": "Account function improvements",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-30 06:49:54 +0000",
+        "merge_commit_sha": "b9cecf5f941b14653c5c354efd025ae39c57b9bd",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Analytics/Query",
+        "risk_reasoning": "Touches SharedSource/Query (cross-cutting query execution framework) and modifies accounting XML content files (Balance Sheet, Trial Balance templates) plus a DomGenerator class — changes to these accounting function definitions affect all financial reporting queries.",
+        "changed_files_json": "[\"BI/Resources/Query/DomGenerators/DimensionalityTemplateFunctionMarkers.cs\",\"SharedSource/Query/SystemContent/Accounting/Balance sheet closing (consolidated).xml\",\"SharedSource/Query/SystemContent/Accounting/Balance sheet closing.xml\",\"SharedSource/Query/SystemContent/Accounting/Balance sheet opening (consolidated).xml\",\"SharedSource/Query/SystemContent/Accounting/Balance sheet opening.xml\",\"SharedSource/Query/SystemContent/Accounting/Trial balance closing.xml\",\"SharedSource/Query/SystemContent/Accounting/Trial balance opening.xml\",\"SharedSource/Query/SystemContent/SearchMetadata.xml\"]",
+        "work_items_json": "[{\"id\":112981,\"type\":\"Unknown\",\"title\":\"Work item #112981\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.073Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 783,
+        "comparison_id": 4,
+        "pr_number": 24686,
+        "pr_title": "Allow tools to provide custom icons",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-28 04:55:30 +0000",
+        "merge_commit_sha": "f9550a38785e4b6746322133e2eab4b0bc52ca66",
+        "risk_score": 2,
+        "risk_category": "new_feature",
+        "product_area": "Copilot/Analytics",
+        "risk_reasoning": "Adds custom icon capability to Copilot tools touching SharedSource/Web.Core (CopilotToolMetadataProvider, CopilotToolDisplayNameProvider) and multiple Copilot tool implementations across Portal and Modeller — new feature but modifies shared Copilot infrastructure.",
+        "changed_files_json": "[\"BI/Portal/Client/Copilot/ChatEventsList.tsx\",\"BI/Portal/Client/Copilot/CopilotChatModel.ts\",\"BI/Portal/Client/typings/CopilotResponsePart.d.ts\",\"BI/Portal/Controllers/CopilotChatController.cs\",\"BI/Portal/Controllers/TeamsBotController.cs\",\"BI/Portal/Copilot/AnalysisCopilotTools.cs\",\"BI/Portal/Copilot/CubeDefinitionCopilotTools.cs\",\"BI/Portal/Copilot/Notifications/AINotificationTools.cs\",\"BI/UnitTests/Test.Portal/Controllers/TeamsBotControllerTests.cs\",\"Modeller/UI/Copilot/ModellerCopilotTools.cs\",\"SharedSource/Web.Core/Copilot/CopilotToolDisplayNameProvider.cs\",\"SharedSource/Web.Core/Copilot/CopilotToolMetadataProvider.cs\",\"SharedSource/Web.Core/Copilot/DocumentationCopilotTools.cs\",\"SharedSource/Web.Core/Mvc/ServerSentEvents.cs\",\"SharedSource/Web.Core/Web.Core.csproj\"]",
+        "work_items_json": "[{\"id\":113425,\"type\":\"Unknown\",\"title\":\"Work item #113425\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.118Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 786,
+        "comparison_id": 4,
+        "pr_number": 24651,
+        "pr_title": "Improvements to auto source load",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-28 03:50:52 +0000",
+        "merge_commit_sha": "e546b51705ff56a40d27a5a55d1f07c816af2030",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Modeller",
+        "risk_reasoning": "49+ files across Modeller/Core pipeline loaders, SerializationModel, and Modeller/UI — changes to auto source load defaults and IConfiguredDataSource/IDataSourceState interfaces affect the core data pipeline and model serialization, with high regression potential for all connector types.",
+        "changed_files_json": "[\"Directory.Packages.props\",\"Docs/sections/modeling/reference/data-source-configuration.md\",\"Docs/src/components/context-ids.yml\",\"Modeller/Core/DomainModel/Pipelines/LoaderFactory.cs\",\"Modeller/Core/IncrementalLoad/Auto/AutoSourceLoadDefaults.cs\",\"Modeller/Core/Modeller.Core.csproj\",\"Modeller/Core/ModellerCoreSwitch.cs\",\"Modeller/Core/Source/IConfiguredDataSource.cs\",\"Modeller/Core/Source/IDataSourceState.cs\",\"Modeller/SerializationModel/Modeller.SerializationModel.csproj\",\"Modeller/SerializationModel/SAutoSourceLoadDefaults.cs\",\"Modeller/SerializationModel/SDataSource.cs\",\"Modeller/Tests/IntegrationTests/TestConfiguredDataSource.cs\",\"Modeller/Tests/IntegrationTests/UseModellerWarehouseAsDataSourceTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Controllers/SolutionUpgrade/SolutionUpgradeDataSourceConfigurerTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Controllers/SolutionUpgrade/SolutionUpgradeSolutionFinalizerTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/DataSource/ConfiguredDataSourceTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/DataSource/DataSourceClearSensitiveInfoHandlerTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/DataSource/DataSourceSettingsUpgraderTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Helper/DataSourceLicenseUsageProviderTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Modeller.UI.UnitTests.csproj\",\"Modeller/Tests/Modeller.UI.Tests/Resources/DataSourceBlobFactoryTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Resources/DataSourceStoredFileManagerTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Resources/Serialization/Upgraders/DataSourceResource/V2026P1/Expected.json\",\"Modeller/Tests/Modeller.UI.Tests/Resources/Serialization/Upgraders/DataSourceResource/V2026P1/FromV2024P1AddAutoSourceLoadDefaultsUpgraderTests.cs\",\"Modeller/Tests/Modeller.UI.Tests/Resources/Serialization/Upgraders/DataSourceResource/V2026P1/Input.json\",\"Modeller/Tests/Modeller.UI.Tests/Serialization/DataSourceConverterTest.cs\",\"Modeller/Tests/TestCommon/TestConfiguredDataSource.cs\",\"Modeller/Tests/TestCommon/TestDataSourceReference.cs\",\"Modeller/UI/Client/typings/AutoSourceLoadDefaultsViewModel.d.ts\",\"Modeller/UI/Client/typings/ClientText.d.ts\",\"Modeller/UI/Client/typings/ClientTooltips.d.ts\",\"Modeller/UI/Client/typings/DataSourceViewModel.d.ts\",\"Modeller/UI/DataSource/ConfiguredDataSource.cs\",\"Modeller/UI/DataSource/DataSourceState.cs\",\"Modeller/UI/DataSource/DataSourceStateFactory.cs\",\"Modeller/UI/Localization/DataSourceText.resx\",\"Modeller/UI/Localization/Tooltips/DataSourceTooltips.resx\",\"Modeller/UI/Modeller.UI.csproj\",\"Modeller/UI/Models/DataSource/DataSourceViewModel.cs\",\"Modeller/UI/Resources/DomainReferences/NullDataSource.cs\",\"Modeller/UI/Resources/Serialization/Converters/DataSourceConverter.cs\",\"Modeller/UI/Resources/Serialization/DataSourceResourceUpgraderProvider.cs\",\"Modeller/UI/Resources/Serialization/Upgraders/DataSourceResource/V2026P1/FromV2024P1AddAutoSourceLoadDefaultsUpgrader.cs\",\"Modeller/UI/Resources/TypeInfo/DataSourceResourceTypeInfo.cs\",\"Modeller/UI/Views/Template/DataSource/DataSourceSections.html\",\"SharedSource/Core/FeatureSwitching/FeatureSwitchTags.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestTooltips.js\"]",
+        "work_items_json": "[{\"id\":113382,\"type\":\"Unknown\",\"title\":\"Work item #113382\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.149Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 789,
+        "comparison_id": 4,
+        "pr_number": 24657,
+        "pr_title": "Show thinking titles in copilot chat",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-27 23:55:29 +0000",
+        "merge_commit_sha": "b62e7603bc3f8793cb6eba2ca42218e24e8b9e59",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Copilot/Analytics",
+        "risk_reasoning": "Touches SharedSource/Core/FeatureSwitching/FeatureSwitchGroup.cs (cross-cutting feature flag infrastructure) in addition to Portal Copilot UI files — the FeatureSwitchGroup change could affect feature flag evaluation across the entire platform.",
+        "changed_files_json": "[\"BI/Portal/Client/Copilot/ChatEventsList.tsx\",\"BI/Portal/Client/typings/ClientText.d.ts\",\"BI/Portal/CopilotText.Designer.cs\",\"BI/Portal/CopilotText.resx\",\"BI/Portal/Helpers/Debug/PortalSwitch.cs\",\"SharedSource/Core/FeatureSwitching/FeatureSwitchGroup.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\"]",
+        "work_items_json": "[{\"id\":113426,\"type\":\"Unknown\",\"title\":\"Work item #113426\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.184Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 791,
+        "comparison_id": 4,
+        "pr_number": 24655,
+        "pr_title": "Auto-merge releases/2026.03 to master",
+        "pr_author": "Project Collection Build Service (ZapDev)",
+        "pr_completed_date": "2026-04-24 06:12:48 +0000",
+        "merge_commit_sha": "623d578530d884edfc540f201ca9b39571f5ef98",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Analytics/Modeller",
+        "risk_reasoning": "Release merge touching OLAP connection managers (AmoDataManager, CachingAmoDataManager, TomDataManager) and query processing (CurrentPeriodMdxReplacer, DateDimensionKeyFormatProvider) — changes to OLAP connection and MDX query handling carry significant regression risk for all cube-based reports.",
+        "changed_files_json": "[\".github/skills/docs-screenshot/SKILL.md\",\"BI/Resources/Olap/Connection/Amo/AmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/CachingAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Amo/IAmoDataManager.cs\",\"BI/Resources/Olap/Connection/Tom/TomDataManager.cs\",\"BI/Resources/Query/QuerySchemas/CurrentPeriodMdxReplacer.cs\",\"BI/Resources/Query/QuerySchemas/DateDimensionKeyFormatProvider.cs\",\"BI/UnitTests/Test.Resources/Olap/Query/CurrentPeriodMdxReplacerTests.cs\",\"BI/UnitTests/Test.Resources/Olap/Query/DateDimensionKeyFormatProviderTests.cs\",\"BI/UnitTests/Test.Resources/Test.Resources.csproj\",\"Docs/sections/modeling/how-to/manage-history-data.md\",\"Docs/sections/modeling/reference/images/ClearHistory.avif\",\"Docs/sections/modeling/reference/images/ClearHistoryConfirmation.avif\",\"Docs/sections/modeling/reference/images/ClearHistoryTaskPane.avif\",\"Docs/sections/modeling/reference/images/ManageHistory.avif\",\"Docs/sections/modeling/reference/images/ManageHistoryConfirmation.avif\",\"Docs/sections/modeling/reference/steps.mdx\"]",
+        "work_items_json": "[{\"id\":113388,\"type\":\"Unknown\",\"title\":\"Work item #113388\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.201Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 797,
+        "comparison_id": 4,
+        "pr_number": 24553,
+        "pr_title": "fix theme manager circular reference detection",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-17 06:07:43 +0000",
+        "merge_commit_sha": "c9a4e39d3a717fce1c27cf570af99d02cd6b096c",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Analytics",
+        "risk_reasoning": "Theme manager circular reference fix modifies ThemeManager, ThemeComponents, and related interfaces used by Presentation/Charts and Presentation/CellSets — a bug fix to shared theming infrastructure that affects chart and table rendering across all reports.",
+        "changed_files_json": "[\"BI/Portal/Controls/UserControls/ColorPicker/ColorButton.ascx.cs\",\"BI/Portal/Models/Analysis/PivotTableSettingsSummaryBuilder.cs\",\"BI/Presentation/CellSets/CellSetSnapshotColorProvider.cs\",\"BI/Presentation/CellSets/ICellSetColorProvider.cs\",\"BI/Presentation/Charts/FormattedChartSnapshotFactory.cs\",\"BI/Presentation/Charts/FormattedChartTheme.cs\",\"BI/Presentation/Charts/IntersectionFormattingFactory.cs\",\"BI/Presentation/Charts/NodeFormattingFactory.cs\",\"BI/Resources/CellSets/IFormattedCell.cs\",\"BI/Resources/Themes/Adjustment.cs\",\"BI/Resources/Themes/ComponentValueInfo.cs\",\"BI/Resources/Themes/IThemeManager.cs\",\"BI/Resources/Themes/ThemeComponentReference.cs\",\"BI/Resources/Themes/ThemeComponents.cs\",\"BI/Resources/Themes/ThemeManager.cs\",\"BI/UnitTests/Test.Portal/Regression/Runner/TestThemeManager.cs\",\"BI/UnitTests/Test.Portal/Styles/RandomTestThemeManager.cs\",\"BI/UnitTests/Test.Resources/Themes/ThemeManagerTests.cs\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.352Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 798,
+        "comparison_id": 4,
+        "pr_number": 24578,
+        "pr_title": "Include future records when partitioned processing",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-15 23:18:54 +0000",
+        "merge_commit_sha": "7afbb3a0c7526555c23c6d41a91fa21725c683fb",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "Modeller",
+        "risk_reasoning": "Changes to Modeller/Core pipeline loaders (PartitionDateProvider, PartitionedFromDataSourceMaterializer) and Modeller/Warehouse — modifying partitioned data processing logic carries risk of incorrect data loads or missing records in warehouse targets.",
+        "changed_files_json": "[\"Modeller/Core/DomainModel/Pipelines/Loaders/FromDataSourceDataProvider.cs\",\"Modeller/Core/DomainModel/Pipelines/Loaders/PartitionDateProvider.cs\",\"Modeller/Core/DomainModel/Pipelines/Loaders/PartitionedFromDataSourceMaterializer.cs\",\"Modeller/Core/ModellerCoreSwitch.cs\",\"Modeller/Tests/Core.UnitTests/DomainModel/Pipelines/Transforms/Initial/PartitionDateProviderTests.cs\",\"Modeller/UI/Client/typings/ClientText.d.ts\",\"Modeller/UI/Client/typings/ProcessModelJobCode.d.ts\",\"Modeller/UI/Jobs/ProcessModelJobCode.cs\",\"Modeller/UI/Localization/ProcessModelJobCodeText.Designer.cs\",\"Modeller/UI/Localization/ProcessModelJobCodeText.resx\",\"Modeller/UI/Modeller_UIText.Generated.cs\",\"Modeller/UI/Models/Jobs/Processing/PerPartitionJobViewModelNode.cs\",\"Modeller/Warehouse/WarehouseCommandExecutor.cs\",\"SharedSource/UnitTests/TestUtils.Core/Javascript/TestText.js\"]",
+        "work_items_json": "[{\"id\":113325,\"type\":\"Bug\",\"title\":\"Future records are excluded from partition first load\",\"state\":\"Testing\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.360Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 800,
+        "comparison_id": 4,
+        "pr_number": 24572,
+        "pr_title": "update some type generation",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-14 00:27:49 +0000",
+        "merge_commit_sha": "c521640b7512e2aa69dd1f3100bc418e6f67d7fd",
+        "risk_score": 2,
+        "risk_category": "existing_change",
+        "product_area": "SharedSource/Portal/Modeller",
+        "risk_reasoning": "Type generation changes touching SharedSource/Web.Core (WebCoreContent, ZapResourceNames) and Portal/Modeller module registrations — SharedSource/Web.Core is a cross-cutting ASP.NET base layer, though the changes appear primarily build-time with module registration side effects.",
+        "changed_files_json": "[\".nuke/build.schema.json\",\"BI/Portal/Modules/PortalModule.cs\",\"BI/Portal/PortalContent.cs\",\"BI/Portal/ZapResourceNames.cs\",\"ContentTemplate.cs\",\"GulpTasks/contentClasses.js\",\"Modeller/UI/ModellerUIContent.cs\",\"Modeller/UI/Modules/ModellerModule.cs\",\"Modeller/UI/ZapResourceNames.cs\",\"SharedSource/Web.Core/WebCoreContent.cs\",\"SharedSource/Web.Core/ZapResourceNames.cs\",\"build/Build.cs\",\"build/ContentClassesGenerator.cs\",\"build/ResourceNamesGenerator.cs\",\"gulpfile.js\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.371Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 785,
+        "comparison_id": 4,
+        "pr_number": 24666,
+        "pr_title": "Dynamics Business Central Cloud - Update Docs",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-28 04:17:17 +0000",
+        "merge_commit_sha": "fa2bed83d06fc70864d0f1295d002755a101e71c",
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ERP Connectors/Modeller",
+        "risk_reasoning": "Primarily documentation updates for Dynamics 365 Business Central Cloud, but includes two code file changes (InjectionSetup.ts in BCCloud.Smart and ModellerSwitch.cs) — scoped to a single ERP connector area.",
+        "changed_files_json": "[\"Docs/sections/modeling/reference/data-source-listing/apps-api/dynamics-365-business-central-cloud.md\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/BCCloud_EntraApplicationList.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/BCCloud_EntraSetup.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/BC_environments.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/Domain.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/DownloadExtension.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/EntraApplication_Setup.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/InstalledExtensions.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/SelectDS.avif\",\"Docs/sections/modeling/reference/data-source-listing/apps-api/images/Webservices.avif\",\"Modeller/DynamicsBCCloud.Smart/Client/InjectionSetup.ts\",\"Modeller/UI/ModellerSwitch.cs\"]",
+        "work_items_json": "[{\"id\":113118,\"type\":\"Unknown\",\"title\":\"Work item #113118\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.141Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 787,
+        "comparison_id": 4,
+        "pr_number": 24641,
+        "pr_title": "pass requestId to slicer api call.",
+        "pr_author": "Jun Zhu",
+        "pr_completed_date": "2026-04-28 02:01:41 +0000",
+        "merge_commit_sha": "0bf0873669572da62c2276b7f0d7712a40649aa0",
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "Analytics",
+        "risk_reasoning": "Two targeted files (CellSetApiController and CellSetResultBuilder) threading a requestId through the slicer API call — scoped change to existing analytics data retrieval path with moderate risk to slicer/pivot table functionality.",
+        "changed_files_json": "[\"BI/Portal/Controllers/CellSetApiController.cs\",\"BI/Presentation/CellSets/CellSetResultBuilder.cs\"]",
+        "work_items_json": "[{\"id\":113363,\"type\":\"Unknown\",\"title\":\"Work item #113363\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.161Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 807,
+        "comparison_id": 4,
+        "pr_number": 24663,
+        "pr_title": "Auto-merge releases/027_2026.00_2026.03 to master",
+        "pr_author": "Project Collection Build Service (ZapDev)",
+        "pr_completed_date": "2026-04-27T00:57:43.250124Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Auto-merge of a release branch into master for DataSources — no individual file list available, but release merges accumulate multiple connector changes that could affect any data source connector.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113074,\"type\":\"Unknown\",\"title\":\"Work item #113074\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.414Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 808,
+        "comparison_id": 4,
+        "pr_number": 24634,
+        "pr_title": "application-level filtering for xero tb virtual column",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-23T03:41:37.1459211Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ERP Connectors (Xero)",
+        "risk_reasoning": "Application-level filtering for Xero trial balance virtual column targets an existing Xero connector feature — isolated to one ERP connector but modifies existing data filtering behaviour.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.420Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 809,
+        "comparison_id": 4,
+        "pr_number": 24630,
+        "pr_title": "Auto-merge releases/027_2026.00_2026.03 to master",
+        "pr_author": "Project Collection Build Service (ZapDev)",
+        "pr_completed_date": "2026-04-23T00:39:51.6980299Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Auto-merge of release branch into master for DataSources — accumulated release changes without a file list warrant medium caution.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112485,\"type\":\"Unknown\",\"title\":\"Work item #112485\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.427Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 810,
+        "comparison_id": 4,
+        "pr_number": 24615,
+        "pr_title": "Auto-merge releases/027_2026.00_2026.03 to master",
+        "pr_author": "Project Collection Build Service (ZapDev)",
+        "pr_completed_date": "2026-04-21T23:46:42.51595Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Auto-merge of release branch into master for DataSources — same rationale as other DataSources release merges; scope unknown without file list.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113118,\"type\":\"Unknown\",\"title\":\"Work item #113118\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.433Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 817,
+        "comparison_id": 4,
+        "pr_number": 24594,
+        "pr_title": "source filter support for ap aging tables",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-16T01:40:04.4119594Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Source filter support for AP aging tables modifies existing DataSources filtering logic for a specific table type — isolated to one area but changes existing data retrieval behaviour.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113312,\"type\":\"Bug\",\"title\":\"Intacct - AP Aging via Custom Report API - Inconsistency result in Source filter\",\"state\":\"Testing\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.478Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 819,
+        "comparison_id": 4,
+        "pr_number": 24522,
+        "pr_title": "clean up custom table lists",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-14T01:44:43.1658848Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Cleanup of custom table lists in DataSources implies refactoring existing logic — without a file list the scope is uncertain, but connector-level cleanup can affect data ingestion for affected sources.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.490Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 812,
+        "comparison_id": 4,
+        "pr_number": 24582,
+        "pr_title": "TextArea allows onSubmit to be overridden",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-13T06:23:35.1535676Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared (UI)",
+        "risk_reasoning": "Modifying existing TextArea component behaviour (onSubmit override) in ClientShared — this shared component is used across Portal, so behavioural changes could affect any form submission in the product.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112839,\"type\":\"Change Request\",\"title\":\"Copilot chat UI 2\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.446Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 820,
+        "comparison_id": 4,
+        "pr_number": 24568,
+        "pr_title": "Merge 026 -> master",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-10T00:10:14.1052253Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "DataSources",
+        "risk_reasoning": "Full version merge (026 to master) for DataSources without a file list — accumulated changes from a prior release cycle warrant medium caution.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113358,\"type\":\"Bug\",\"title\":\"Numerous unobserved task exceptions in Data Hub and Data Sources\",\"state\":\"Testing\"},{\"id\":113367,\"type\":\"Support Issue\",\"title\":\"DH Pace - Client seeing error messages in the logs.\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.495Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 822,
+        "comparison_id": 4,
+        "pr_number": 24498,
+        "pr_title": "Dynamics Business Central Cloud - Add Codeunit Extension",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-08T00:45:53.6455226Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ERP Connectors - Dynamics 365 Business Central",
+        "risk_reasoning": "Adding a Codeunit Extension to the BC Cloud connector modifies an existing ERP connector's data extraction logic, which could affect BC cloud data sync for affected customers.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113212,\"type\":\"Task\",\"title\":\"Dynamics 365 Business Central Cloud - Codeunit Extension Implementation\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.507Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 823,
+        "comparison_id": 4,
+        "pr_number": 24556,
+        "pr_title": "Intacct - Correctly use Date data type",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-08T00:41:00.6058887Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ERP Connectors - Intacct",
+        "risk_reasoning": "Correcting Date data type usage in the Intacct connector is a targeted bug fix to an existing connector that could affect date field extraction and downstream data integrity.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113352,\"type\":\"Support Issue\",\"title\":\"4thdimension. Intacct. Encountered the following result error: DL02000001: (Error: There was an error processing the request.\",\"state\":\"Awaiting support\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.512Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 816,
+        "comparison_id": 4,
+        "pr_number": 24541,
+        "pr_title": "Adding Zap AI MessageInput features to TextArea",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-04-07T03:22:50.2117238Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared (UI)",
+        "risk_reasoning": "Adding Zap AI MessageInput features into the existing TextArea component modifies shared UI infrastructure used across the Portal, increasing risk of unintended side effects in any screen using TextArea.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112830,\"type\":\"Change Request\",\"title\":\"Sql copilot poc\",\"state\":\"Testing\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.473Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 824,
+        "comparison_id": 4,
+        "pr_number": 24536,
+        "pr_title": "MYOB - Page recovery fixes",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-01T05:27:26.3170411Z",
+        "merge_commit_sha": null,
+        "risk_score": 3,
+        "risk_category": "existing_change",
+        "product_area": "ERP Connectors - MYOB",
+        "risk_reasoning": "Page recovery fixes in the MYOB connector address existing reliability behaviour in data pagination, which could affect completeness and correctness of MYOB data ingestion.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112116,\"type\":\"Change Request\",\"title\":\"Partitioning support for Access data sources\",\"state\":\"Closed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.519Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 784,
+        "comparison_id": 4,
+        "pr_number": 24687,
+        "pr_title": "Basic Zap AI unread message counter",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-28 04:37:44 +0000",
+        "merge_commit_sha": "8a7a1f7e3b0f9c9caf2cab2adfffd0c1fa8d4bf9",
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "Analytics/Copilot",
+        "risk_reasoning": "Only 2 files changed (CopilotChatButton and CopilotChatModel) — small, additive UI change adding an unread message counter to the Copilot banner button with no shared infrastructure impact.",
+        "changed_files_json": "[\"BI/Portal/Client/Banner/CopilotChatButton.tsx\",\"BI/Portal/Client/Copilot/CopilotChatModel.ts\"]",
+        "work_items_json": "[{\"id\":113427,\"type\":\"Unknown\",\"title\":\"Work item #113427\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.129Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 811,
+        "comparison_id": 4,
+        "pr_number": 24637,
+        "pr_title": "Added icon for Talk data to me",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-23T06:15:39.2744097Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "ClientShared (UI)",
+        "risk_reasoning": "Additive icon addition for 'Talk data to me' feature in ClientShared — purely visual asset, no logic change.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112839,\"type\":\"Change Request\",\"title\":\"Copilot chat UI 2\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.438Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 813,
+        "comparison_id": 4,
+        "pr_number": 24597,
+        "pr_title": "Snowflake - Add Native SQL API connector",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-21T23:33:58.74544Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "DataSources",
+        "risk_reasoning": "New Snowflake Native SQL API connector is an additive new data source — isolated feature with no modification of existing connectors.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":112485,\"type\":\"Unknown\",\"title\":\"Work item #112485\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.454Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 814,
+        "comparison_id": 4,
+        "pr_number": 24593,
+        "pr_title": "Add api for default load columns",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-21T00:13:11.3857538Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "DataSources",
+        "risk_reasoning": "New API for default load columns is additive — adds new endpoint behaviour without stated modification of existing DataSources logic.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113382,\"type\":\"Unknown\",\"title\":\"Work item #113382\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.462Z",
+        "repo_name": "DataSources"
+      },
+      {
+        "id": 815,
+        "comparison_id": 4,
+        "pr_number": 24552,
+        "pr_title": "Add multiTable icon for allAvailableTables context item",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-04-07T05:16:41.5697716Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "ClientShared (UI)",
+        "risk_reasoning": "Adding a multiTable icon for a context menu item is a purely additive visual change in ClientShared.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.467Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 821,
+        "comparison_id": 4,
+        "pr_number": 24528,
+        "pr_title": "Add aiSearch icon",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-03-31T06:08:19.9714031Z",
+        "merge_commit_sha": null,
+        "risk_score": 4,
+        "risk_category": "new_feature",
+        "product_area": "Shared Client UI",
+        "risk_reasoning": "Adding a new icon to the shared client UI component library is additive-only with no modification of existing behaviour, though it touches a shared package used across the Portal.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.501Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 790,
+        "comparison_id": 4,
+        "pr_number": 24658,
+        "pr_title": "speed up local nuke operations",
+        "pr_author": "Robert Alexander MacDonald",
+        "pr_completed_date": "2026-04-26 21:45:45 +0000",
+        "merge_commit_sha": "8bd329864fd148daa20c771fad6aa9a887b49ab1",
+        "risk_score": 5,
+        "risk_category": "config_change",
+        "product_area": "Build",
+        "risk_reasoning": "Single build.ps1 change to speed up local nuke operations — no runtime impact, purely affects local developer build performance.",
+        "changed_files_json": "[\"build.ps1\"]",
+        "work_items_json": "[{\"id\":45661,\"type\":\"Task\",\"title\":\"Administration\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.191Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 793,
+        "comparison_id": 4,
+        "pr_number": 24617,
+        "pr_title": "Snowflake - Update documentation",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-23 05:41:03 +0000",
+        "merge_commit_sha": "1dbde91ba1bbba51ed1649c6223605a01ec8eeca",
+        "risk_score": 5,
+        "risk_category": "documentation",
+        "product_area": "Data Sources",
+        "risk_reasoning": "Pure documentation update for Snowflake and BigQuery — three Docs markdown files only, no runtime code changes.",
+        "changed_files_json": "[\"Docs/sections/modeling/reference/data-source-listing/apps-api/snowflake.md\",\"Docs/sections/modeling/reference/data-source-listing/databases/big-query.md\",\"Docs/sections/modeling/reference/data-source-listing/databases/snowflake.md\"]",
+        "work_items_json": "[{\"id\":112485,\"type\":\"Unknown\",\"title\":\"Work item #112485\",\"state\":\"\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.213Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 799,
+        "comparison_id": 4,
+        "pr_number": 23966,
+        "pr_title": "Docs - Update Scripts content",
+        "pr_author": "Ariel Mann",
+        "pr_completed_date": "2026-04-14 02:07:47 +0000",
+        "merge_commit_sha": "0ec9877433816cae5f50657d2506f1fcdc7bd5ed",
+        "risk_score": 5,
+        "risk_category": "documentation",
+        "product_area": "Modeller",
+        "risk_reasoning": "Twelve Docs files (markdown and images) updating SQL Scripts documentation — pure documentation with no runtime code changes.",
+        "changed_files_json": "[\"Docs/sections/modeling/how-to/use-a-database-script.md\",\"Docs/sections/modeling/reference/images/3_mod_sql_step_new.avif\",\"Docs/sections/modeling/reference/images/4_mod_sql_step_preview.avif\",\"Docs/sections/modeling/reference/images/5_mod_sql_step_drag_pipeline.avif\",\"Docs/sections/modeling/reference/images/6_mod_sql_step_drag_drop.avif\",\"Docs/sections/modeling/reference/images/7_mod_sql_step_complete.avif\",\"Docs/sections/modeling/reference/images/8_mod-sql-step-validation.avif\",\"Docs/sections/modeling/reference/images/DeleteDatabseScript.avif\",\"Docs/sections/modeling/reference/images/REF_SCRIPTS_1.avif\",\"Docs/sections/modeling/reference/images/REF_SCRIPTS_2_mod_column_calc_column_drag_drop.avif\",\"Docs/sections/modeling/reference/scripts.md\",\"Docs/src/components/context-ids.yml\"]",
+        "work_items_json": "[{\"id\":112683,\"type\":\"Bug\",\"title\":\"Documentation - Scripts - Duplicate content under Settings\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.366Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 801,
+        "comparison_id": 4,
+        "pr_number": 24567,
+        "pr_title": "Improve partitioning documentation",
+        "pr_author": "Chalinda Rodrigo",
+        "pr_completed_date": "2026-04-10 01:29:27 +0000",
+        "merge_commit_sha": "c6bf2fa7d15b6bea26602e6c818c2c6de37d5385",
+        "risk_score": 5,
+        "risk_category": "documentation",
+        "product_area": "Modeller",
+        "risk_reasoning": "Single .mdx documentation file change covering partitioning reference — no runtime code affected.",
+        "changed_files_json": "[\"Docs/sections/modeling/reference/pipelines.mdx\"]",
+        "work_items_json": "[{\"id\":111711,\"type\":\"Change Request\",\"title\":\"Documentation\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.378Z",
+        "repo_name": "BI"
+      },
+      {
+        "id": 818,
+        "comparison_id": 4,
+        "pr_number": 24534,
+        "pr_title": "Add cutout to aiSearch icon",
+        "pr_author": "Liam James",
+        "pr_completed_date": "2026-03-31T22:56:01.093814Z",
+        "merge_commit_sha": null,
+        "risk_score": 5,
+        "risk_category": "existing_change",
+        "product_area": "ClientShared (UI)",
+        "risk_reasoning": "Minor visual cutout added to an existing icon in ClientShared — negligible runtime risk.",
+        "changed_files_json": "[]",
+        "work_items_json": "[{\"id\":113115,\"type\":\"Task\",\"title\":\"Improve process for copilot enabled reports\",\"state\":\"Active\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.484Z",
+        "repo_name": "ClientShared"
+      },
+      {
+        "id": 806,
+        "comparison_id": 4,
+        "pr_number": 24525,
+        "pr_title": "Bumping version to 2026.4",
+        "pr_author": "Simon Oxtoby",
+        "pr_completed_date": "2026-03-31 04:00:38 +0000",
+        "merge_commit_sha": "6d138c6b8bc9e587448ea9bd83490906c8fe1354",
+        "risk_score": 5,
+        "risk_category": "config_change",
+        "product_area": "Build / Release",
+        "risk_reasoning": "Single GitInfo.txt version bump to 2026.4 — no runtime code changed.",
+        "changed_files_json": "[\"GitInfo.txt\"]",
+        "work_items_json": "[{\"id\":45656,\"type\":\"Task\",\"title\":\"Administration (Oxto)\",\"state\":\"Proposed\"}]",
+        "analyzed_at": "2026-05-05T00:26:33.409Z",
+        "repo_name": "BI"
+      }
+    ],
+    "riskDistribution": {
+      "1": 10,
+      "2": 8,
+      "3": 14,
+      "4": 6,
+      "5": 6
+    },
+    "topAreas": [
+      {
+        "area": "DataSources",
+        "count": 8
+      },
+      {
+        "area": "ClientShared (UI)",
+        "count": 5
+      },
+      {
+        "area": "Modeller",
+        "count": 4
+      },
+      {
+        "area": "Portal/Presentation/Resources",
+        "count": 2
+      },
+      {
+        "area": "Cross-cutting (Shared + Portal + Modeller)",
+        "count": 2
+      },
+      {
+        "area": "Copilot/Analytics",
+        "count": 2
+      },
+      {
+        "area": "Analytics",
+        "count": 2
+      },
+      {
+        "area": "Portal/Modeller/SharedSource",
+        "count": 1
+      },
+      {
+        "area": "Copilot/SharedSource",
+        "count": 1
+      },
+      {
+        "area": "Portal/Copilot/Analytics",
+        "count": 1
+      },
+      {
+        "area": "SharedSource/Copilot",
+        "count": 1
+      },
+      {
+        "area": "Cross-cutting (Modeller + Analytics + Shared)",
+        "count": 1
+      },
+      {
+        "area": "Cross-cutting (Shared + Portal + Analytics)",
+        "count": 1
+      },
+      {
+        "area": "Analytics/Query",
+        "count": 1
+      },
+      {
+        "area": "Analytics/Modeller",
+        "count": 1
+      },
+      {
+        "area": "SharedSource/Portal/Modeller",
+        "count": 1
+      },
+      {
+        "area": "ERP Connectors/Modeller",
+        "count": 1
+      },
+      {
+        "area": "ERP Connectors (Xero)",
+        "count": 1
+      },
+      {
+        "area": "ERP Connectors - Dynamics 365 Business Central",
+        "count": 1
+      },
+      {
+        "area": "ERP Connectors - Intacct",
+        "count": 1
+      },
+      {
+        "area": "ERP Connectors - MYOB",
+        "count": 1
+      },
+      {
+        "area": "Analytics/Copilot",
+        "count": 1
+      },
+      {
+        "area": "Shared Client UI",
+        "count": 1
+      },
+      {
+        "area": "Build",
+        "count": 1
+      },
+      {
+        "area": "Data Sources",
+        "count": 1
+      },
+      {
+        "area": "Build / Release",
+        "count": 1
+      }
+    ]
+  },
+  "testRecommendations": {
+    "candidates": [
+      {
+        "area": "All Matches",
+        "matchReason": "60 test cases matched from 578 total",
+        "prCount": 44,
+        "testCases": [
+          {
+            "id": 113189,
+            "name": "Filter an analytic using the Filters placeholder",
+            "tier": "Tier-1",
+            "score": 51,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113193,
+            "name": "Slice an analytic using slicer types",
+            "tier": "Tier-1",
+            "score": 51,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113136,
+            "name": "Create a basic analysis table",
+            "tier": "Tier-1",
+            "score": 49,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113191,
+            "name": "Refresh report data on-demand",
+            "tier": "Tier-1",
+            "score": 45,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "modeller:pipeline",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113178,
+            "name": "Create a basic dashboard with resources",
+            "tier": "Tier-1",
+            "score": 34,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113184,
+            "name": "Create a report pack with resources and section breaks",
+            "tier": "Tier-1",
+            "score": 31,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113185,
+            "name": "Create a basic chart",
+            "tier": "Tier-1",
+            "score": 30,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113175,
+            "name": "Create a basic calculated member",
+            "tier": "Tier-1",
+            "score": 28,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113165,
+            "name": "Change connection for an analytic via right-click menu",
+            "tier": "Tier-1",
+            "score": 25,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113190,
+            "name": "Import and export analytics resources",
+            "tier": "Tier-1",
+            "score": 11,
+            "matchedTerms": [
+              "analytics"
+            ]
+          },
+          {
+            "id": 109286,
+            "name": "Reference Relationships",
+            "tier": "Tier-2",
+            "score": 79,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 99065,
+            "name": "Relative Time folder should show for Date hierarchies in dimension tree",
+            "tier": "Tier-2",
+            "score": 77,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 94894,
+            "name": "Smoke Test - Full Designer Role",
+            "tier": "Tier-2",
+            "score": 70,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 110317,
+            "name": "Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack",
+            "tier": "Tier-2",
+            "score": 67,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 101389,
+            "name": "Process Performance on Solution with Indexes",
+            "tier": "Tier-2",
+            "score": 62,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 101475,
+            "name": "Date Pipeline should still work without Hierarchy",
+            "tier": "Tier-2",
+            "score": 62,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 96899,
+            "name": "Modeller - SAP Business One - Solution and Analytics Deployment",
+            "tier": "Tier-2",
+            "score": 61,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 104694,
+            "name": "Create tenant with WAF and Azure SQL enabled",
+            "tier": "Tier-2",
+            "score": 60,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 107742,
+            "name": "Converting a Model from a Multi-Dimensional cube server into Tabular",
+            "tier": "Tier-2",
+            "score": 60,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 113060,
+            "name": "Process specific pipelines",
+            "tier": "Tier-2",
+            "score": 60,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 113201,
+            "name": "Apply multiple filters to restrict analytic data",
+            "tier": "Tier-2",
+            "score": 60,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 97149,
+            "name": "Modeller - Offline Datasource supports composite tables",
+            "tier": "Tier-2",
+            "score": 59,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 113062,
+            "name": "Process configurations",
+            "tier": "Tier-2",
+            "score": 59,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 94638,
+            "name": "SMV - Gateway support for file datasources in handisoft upgrade scenario",
+            "tier": "Tier-2",
+            "score": 57,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 108635,
+            "name": "Azure Analysis Service for Tabular modeling",
+            "tier": "Tier-2",
+            "score": 57,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 111532,
+            "name": "Excel add-in",
+            "tier": "Tier-2",
+            "score": 57,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 103931,
+            "name": "Query design panels",
+            "tier": "Tier-2",
+            "score": 56,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 95364,
+            "name": "Forward compatibility test for K releases - resources from current version to previous version",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 97516,
+            "name": "Modeller - Sage Micropay (Basic Datasource testing)",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 97517,
+            "name": "Modeller - SAP Business One (Basic Datasource testing)",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 97518,
+            "name": "Modeller - SYSPRO (Basic Datasource testing)",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 97519,
+            "name": "Modeller - Sage 1000 (Basic Datasource Testing)",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 99705,
+            "name": "Forward compatibility test for On Prem releases - resources from current version to previous version",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 112282,
+            "name": "Dynamics 365 BC Cloud with new dynamics extension",
+            "tier": "Tier-2",
+            "score": 55,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 98666,
+            "name": "Enforce key uniqueness for field existing pipelines",
+            "tier": "Tier-2",
+            "score": 54,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 97199,
+            "name": "MYOB - Sales module",
+            "tier": "Tier-2",
+            "score": 53,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 110217,
+            "name": "Opening Resources from the Dimension Tree",
+            "tier": "Tier-2",
+            "score": 52,
+            "matchedTerms": [
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 112174,
+            "name": "Model Server - Azure Analysis Services MFA/interactive authentication",
+            "tier": "Tier-2",
+            "score": 52,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 92131,
+            "name": "Modeller - Warehouse Sql pipeline preview loads with correct results",
+            "tier": "Tier-2",
+            "score": 50,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 99819,
+            "name": "SchemaBinding and Row-level security works for Sage Internal Purposes (Odata Layer)",
+            "tier": "Tier-2",
+            "score": 50,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 112708,
+            "name": "Accounting functions on analytics",
+            "tier": "Tier-2",
+            "score": 50,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "connectors:sage-x3",
+              "analytics:chart",
+              "connectors:dynamics-bc",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 113066,
+            "name": "Add a model server",
+            "tier": "Tier-2",
+            "score": 50,
+            "matchedTerms": [
+              "analytics:query-design",
+              "modeller",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "analytics:chart",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "analytics:dashboard",
+              "modeller:processing",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 92217,
+            "name": "Modeller - Magento Datasource",
+            "tier": "Tier-2",
+            "score": 49,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 109960,
+            "name": "Pipeline Preview - Full Preview",
+            "tier": "Tier-2",
+            "score": 49,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 112080,
+            "name": "MYOB - Add the Date columns",
+            "tier": "Tier-2",
+            "score": 49,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 96521,
+            "name": "SAP Business One Datasource (DI API)",
+            "tier": "Tier-2",
+            "score": 48,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 99844,
+            "name": "Model's Warehouse Collation - Azure SQL Database",
+            "tier": "Tier-2",
+            "score": 48,
+            "matchedTerms": [
+              "modeller",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 111452,
+            "name": "Sage X3 MsSqlServer source deletes",
+            "tier": "Tier-2",
+            "score": 48,
+            "matchedTerms": [
+              "modeller",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 101999,
+            "name": "Datasource - model's warehouse db as datasource",
+            "tier": "Tier-2",
+            "score": 47,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 113307,
+            "name": "Modeller - Create a full Model - Acumatica (Basic Data source testing)",
+            "tier": "Tier-2",
+            "score": 47,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 97937,
+            "name": "MYOB - support enumerating, selecting and auto-merging accessible company files",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 98225,
+            "name": "SAP - DH 9 - Power BI - ZAP Analytics Solution - Procurement Module -Procurement Invoices & Order Lines - DELIVERY PERFORMANCE DASHBOARD",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 98874,
+            "name": "MYOB- Company selection and access control improvements",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 106311,
+            "name": "Canceling a processing model",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 107158,
+            "name": "Enable Source Query checkbox on D365 Finance and SCM solution",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 108556,
+            "name": "Regression Tests after updating to TLS 1.2",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "connectors:dynamics-ax",
+              "connectors:sage-300",
+              "connectors:sage-x3",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "connectors:dynamics-bc",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 110395,
+            "name": "Copy-pasting and dereferencing query parts",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "analytics:query-design",
+              "analytics",
+              "analytics:analysis-table",
+              "analytics:copilot",
+              "analytics:chart",
+              "analytics:dashboard",
+              "analytics:analysis-table:filters",
+              "analytics:analysis-table:slicers"
+            ]
+          },
+          {
+            "id": 111335,
+            "name": "Create pipeline as delta",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 111959,
+            "name": "Cancel profiling and previewing queries when processing",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          },
+          {
+            "id": 112197,
+            "name": "Auto materialization to table for pipelines that full load",
+            "tier": "Tier-2",
+            "score": 46,
+            "matchedTerms": [
+              "modeller",
+              "modeller:cube:ssas",
+              "modeller:cube",
+              "modeller:cube:tabular",
+              "modeller:serialization",
+              "modeller:warehouse",
+              "modeller:pipeline",
+              "modeller:datasource",
+              "modeller:simple-model-view",
+              "modeller:processing"
+            ]
+          }
+        ]
+      }
+    ],
+    "refined": [
+      {
+        "id": 113189,
+        "name": "Filter an analytic using the Filters placeholder",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Analytics PRs (#24553 theme fix, #24628 merge, #24701 account functions) directly affect analytic rendering and filter behaviour."
+      },
+      {
+        "id": 113193,
+        "name": "Slice an analytic using slicer types",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. PR #24641 explicitly changes the slicer API call (passes requestId); slicer functionality must be verified end-to-end."
+      },
+      {
+        "id": 113136,
+        "name": "Create a basic analysis table",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Broad cross-cutting registration changes (#24523, #24550, #24563, #24624) affect resource creation paths including analysis tables."
+      },
+      {
+        "id": 113191,
+        "name": "Refresh report data on-demand",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. PR #24539 opens model background tasks from data limits, directly touching on-demand refresh and pipeline execution flow."
+      },
+      {
+        "id": 113178,
+        "name": "Create a basic dashboard with resources",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Portal/Presentation registration cleanups (#24563, #24624) affect resource wiring including dashboards."
+      },
+      {
+        "id": 113184,
+        "name": "Create a report pack with resources and section breaks",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Portal/Presentation changes and resource registration updates could affect report pack composition and rendering."
+      },
+      {
+        "id": 113185,
+        "name": "Create a basic chart",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Analytics engine touched by multiple PRs (#24553, #24628, #24655); chart creation exercises core analytic and presentation paths."
+      },
+      {
+        "id": 113175,
+        "name": "Create a basic calculated member",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. PR #24701 (account function improvements) and cross-cutting SharedSource changes affect calculated member formula evaluation."
+      },
+      {
+        "id": 113165,
+        "name": "Change connection for an analytic via right-click menu",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Cross-cutting registration and type-generation PRs (#24523, #24550, #24572) affect resource connection resolution."
+      },
+      {
+        "id": 113190,
+        "name": "Import and export analytics resources",
+        "tier": "Tier-1",
+        "priority": "must-run",
+        "reasoning": "Tier-1. Portal/Presentation registration and SharedSource type-generation changes could break import/export serialisation paths."
+      },
+      {
+        "id": 112708,
+        "name": "Accounting functions on analytics",
+        "tier": "Tier-2",
+        "priority": "must-run",
+        "reasoning": "PR #24701 directly improves account functions on analytics; this test exercises exactly those accounting functions across multiple models."
+      },
+      {
+        "id": 112282,
+        "name": "Dynamics 365 BC Cloud with new dynamics extension",
+        "tier": "Tier-2",
+        "priority": "must-run",
+        "reasoning": "PR #24498 adds a BC Cloud Codeunit Extension; this test validates the BC Cloud extension download and model processing flow end-to-end."
+      },
+      {
+        "id": 113201,
+        "name": "Apply multiple filters to restrict analytic data",
+        "tier": "Tier-2",
+        "priority": "must-run",
+        "reasoning": "Analytics filtering touched by PR #24641 (slicer requestId) and #24553 (theme/analytics fix); multiple-filter scenario validates compound filter stability."
+      },
+      {
+        "id": 109286,
+        "name": "Reference Relationships",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24551 (Link attributes improvements) is cross-cutting Modeller+Analytics+Shared; Reference Relationships depend on link attribute metadata."
+      },
+      {
+        "id": 99065,
+        "name": "Relative Time folder should show for Date hierarchies in dimension tree",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Analytics dimension tree paths changed in merge PRs (#24628, #24655); relative time folders rely on hierarchy metadata that could be affected."
+      },
+      {
+        "id": 94894,
+        "name": "Smoke Test - Full Designer Role",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Cross-cutting registration PRs (#24523, #24550, #24563) change how roles and permissions are wired; smoke test as Full Designer validates nothing is broken."
+      },
+      {
+        "id": 103931,
+        "name": "Query design panels",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Query design drag-and-drop panels exercise Portal/Analytics paths touched by multiple registration and type-generation PRs."
+      },
+      {
+        "id": 110395,
+        "name": "Copy-pasting and dereferencing query parts",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "SharedSource and query-layer changes (#24572, #24701) could affect copy-paste behaviour in query parts."
+      },
+      {
+        "id": 110217,
+        "name": "Opening Resources from the Dimension Tree",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Portal/Analytics and dimension-tree paths changed; opening resources from the dimension tree exercises these integrated paths."
+      },
+      {
+        "id": 113060,
+        "name": "Process specific pipelines",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24651 (auto source load improvements) and #24578 (future records in partitioned processing) change pipeline execution; verify selective pipeline processing still works."
+      },
+      {
+        "id": 113062,
+        "name": "Process configurations",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Modeller registration/type-generation PRs (#24550, #24572) affect model configuration wiring; process configurations exercise this."
+      },
+      {
+        "id": 113035,
+        "name": "Delete a pipeline",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Modeller cross-cutting changes (#24551, #24550) touch pipeline metadata; deleting a pipeline validates referential integrity post-change."
+      },
+      {
+        "id": 113044,
+        "name": "Calculated columns",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Modeller warehouse pipeline changes (#24651, #24578) could affect calculated columns in warehouse pipelines."
+      },
+      {
+        "id": 111532,
+        "name": "Excel add-in",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Portal/Presentation and SharedSource changes affect serialisation and data delivery paths used by the Excel add-in."
+      },
+      {
+        "id": 113066,
+        "name": "Add a model server",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Registration cleanup PRs (#24523, #24550, #24563) change how model server resources are registered; adding a model server validates this."
+      },
+      {
+        "id": 112197,
+        "name": "Auto materialization to table for pipelines that full load",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24651 (auto source load) and #24578 (future records/partitioned processing) directly influence materialization logic; auto-materialization test validates the interaction."
+      },
+      {
+        "id": 111335,
+        "name": "Create pipeline as delta",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24578 includes future records in partitioned processing, which is foundational to delta/incremental pipeline correctness."
+      },
+      {
+        "id": 92131,
+        "name": "Modeller - Warehouse Sql pipeline preview loads with correct results",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Modeller warehouse SQL pipeline paths touched by #24651 and #24578; preview correctness should be verified."
+      },
+      {
+        "id": 109960,
+        "name": "Pipeline Preview - Full Preview",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "Modeller pipeline preview exercises source load and profiling paths changed by PR #24651 (auto source load improvements)."
+      },
+      {
+        "id": 97199,
+        "name": "MYOB - Sales module",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24536 (MYOB page recovery fixes) changes MYOB connector behaviour; sales module data retrieval exercises the fixed paths."
+      },
+      {
+        "id": 112080,
+        "name": "MYOB - Add the Date columns",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "PR #24536 (MYOB page recovery) affects how MYOB tables/pages are retrieved; date column pipelines exercise the recovery logic."
+      },
+      {
+        "id": 113307,
+        "name": "Modeller - Create a full Model - Acumatica (Basic Data source testing)",
+        "tier": "Tier-2",
+        "priority": "should-run",
+        "reasoning": "DataSources area has multiple PRs (#24593, #24597, #24630, #24663); Acumatica basic datasource test validates that datasource framework changes haven't broken new connectors."
+      },
+      {
+        "id": 101389,
+        "name": "Process Performance on Solution with Indexes",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Modeller processing changes (#24651, #24578) could indirectly affect indexed solution performance, but no direct overlap with Sage X3 index processing."
+      },
+      {
+        "id": 106311,
+        "name": "Canceling a processing model",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Modeller processing touched by partitioning and auto source load PRs; cancellation logic could be affected but is lower risk."
+      },
+      {
+        "id": 111959,
+        "name": "Cancel profiling and previewing queries when processing",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Profiling/previewing cancellation indirectly related to PR #24651 auto source load changes; worth running if time allows."
+      },
+      {
+        "id": 96623,
+        "name": "Create a Full Model - MYOB AccountRight Live (Basic Datasource Testing)",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "MYOB AccountRight connector indirectly affected by PR #24536 page recovery fixes; basic model creation validates connector stability."
+      },
+      {
+        "id": 97937,
+        "name": "MYOB - support enumerating, selecting and auto-merging accessible company files",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "MYOB company enumeration could be indirectly affected by PR #24536 page recovery fixes."
+      },
+      {
+        "id": 98874,
+        "name": "MYOB- Company selection and access control improvements",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "MYOB company access control indirectly related to PR #24536 MYOB changes; lower risk as page recovery is a distinct code path."
+      },
+      {
+        "id": 101475,
+        "name": "Date Pipeline should still work without Hierarchy",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Date pipeline processing indirectly touches Modeller core paths changed in #24651/#24578 but no direct dependency."
+      },
+      {
+        "id": 101999,
+        "name": "Datasource - model's warehouse db as datasource",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "DataSources changes (#24593 default load columns API) could affect how warehouse-as-datasource resolves columns."
+      },
+      {
+        "id": 107158,
+        "name": "Enable Source Query checkbox on D365 Finance and SCM solution",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "DataSources area changed; D365 Finance/SCM source query toggle is a distinct path but DataSources cleanup PRs could affect it."
+      },
+      {
+        "id": 98666,
+        "name": "Enforce key uniqueness for field existing pipelines",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Modeller pipeline key uniqueness logic is adjacent to pipeline metadata changes in #24551 link attributes; low direct overlap."
+      },
+      {
+        "id": 110317,
+        "name": "Licensing support for database script, advanced pipeline steps, data sources, publication rule, and report pack",
+        "tier": "Tier-2",
+        "priority": "optional",
+        "reasoning": "Cross-cutting SharedSource changes could theoretically affect licensing checks, but no licensing-specific PRs are present."
+      }
+    ],
+    "refineSummary": "This release is broad but concentrated in four main risk zones: (1) Analytics and Query — PRs #24701, #24641, #24553, and multiple merge PRs change account functions, slicer request handling, and theme management, making all analytic and filtering test cases high priority; (2) Modeller pipeline processing — PRs #24651 and #24578 alter auto source load and future-record partitioned processing, requiring thorough pipeline, delta, and materialization test coverage; (3) Cross-cutting registrations and type generation — PRs #24523, #24550, #24563, #24572 touch SharedSource, Portal, and Modeller registration wiring globally, so all resource-creation and connection-change Tier-1 tests are mandatory; (4) ERP connectors — PRs #24498 (BC Cloud Codeunit Extension), #24536 (MYOB page recovery), and #24634 (Xero TB virtual column) require targeted connector validation, with BC Cloud and MYOB being the highest priority given functional changes. Copilot and ClientShared UI icon PRs carry low regression risk to core QA scenarios."
+  }
+}
